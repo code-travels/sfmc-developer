@@ -1,0 +1,287 @@
+Received: from MN2PR06MB6703.namprd06.prod.outlook.com (2603:10b6:208:202::20)
+ by CO6PR06MB7073.namprd06.prod.outlook.com with HTTPS; Sat, 4 Mar 2023
+ 20:05:35 +0000
+Received: from DS7PR03CA0142.namprd03.prod.outlook.com (2603:10b6:5:3b4::27)
+ by MN2PR06MB6703.namprd06.prod.outlook.com (2603:10b6:208:202::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6156.25; Sat, 4 Mar
+ 2023 20:05:34 +0000
+Received: from DM6NAM04FT053.eop-NAM04.prod.protection.outlook.com
+ (2603:10b6:5:3b4:cafe::57) by DS7PR03CA0142.outlook.office365.com
+ (2603:10b6:5:3b4::27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6156.23 via Frontend
+ Transport; Sat, 4 Mar 2023 20:05:34 +0000
+Authentication-Results: spf=pass (sender IP is 209.85.128.173)
+ smtp.mailfrom=barkleyus.com; dkim=pass (signature was verified)
+ header.d=barkleyus.com;dmarc=pass action=none
+ header.from=barkleyus.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of barkleyus.com designates
+ 209.85.128.173 as permitted sender) receiver=protection.outlook.com;
+ client-ip=209.85.128.173; helo=mail-yw1-f173.google.com; pr=C
+Received: from mail-yw1-f173.google.com (209.85.128.173) by
+ DM6NAM04FT053.mail.protection.outlook.com (10.13.159.113) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6156.12 via Frontend Transport; Sat, 4 Mar 2023 20:05:34 +0000
+X-IncomingTopHeaderMarker:
+ OriginalChecksum:43C2625CB3E012252CACA7826785EC9AC87B1F1B5FC5241A271DDEFCDF16C928;UpperCasedChecksum:D5D6E50EEC65CD8DB20EE714D173DE3B0BC2C497A7F97226D5CC720AD1B2EC0B;SizeAsReceived:2184;Count:13
+Received: by mail-yw1-f173.google.com with SMTP id 00721157ae682-5384ff97993so108773037b3.2
+        for <nasirwatts@outlook.com>; Sat, 04 Mar 2023 12:05:34 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=barkleyus.com; s=google; t=1677960333;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=oHMfghepx0ROwRnDQ0lfezEfCX3Gw7yTrQd5yYvJXbQ=;
+        b=QpKzryHuOweyTBnwX0ArgTEOBB7GW3AK6TS7wLds0bxD1V7GIFMO2DJ2xsIdHiMGQj
+         AOKpOaEn3sgfKDImXwHUmohd4BlrEl40Ri1i2NP72vkqEBk/O1vgGCKmVXXPG85oP2F5
+         dmAWpHP8TlBuA7u/yFPanF+QNIlp6QutZ1C1k=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112; t=1677960333;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=oHMfghepx0ROwRnDQ0lfezEfCX3Gw7yTrQd5yYvJXbQ=;
+        b=qSPz9GEuuFOCl/TnjnUJSzhxLMA7+sn8hV/6WMPtnqMALPhE88OT91/ZiRlTM4Gyc8
+         lRJdVKaKH5RY+hNjugovn/QVbGlM59EYSS1Z1gJW4HJ0XWPV1/i3gKt7TXoeUe4IEjCs
+         vAW9TTvAYR/UzFYmBlOGoCMKZ9DtCntB8ikBNeeinvPD3h4mPZ7x555sFROZlyR1duYD
+         hau/uORx4fSTQ9A9vJ/0fKPE5ekQQVrByTFC5MfSdMQCIY+D/lJNdlrW34Y939S1y++0
+         drsFQKfaE4cnmTXRAvQvL2vliaHIwht2dXzS1uEwgpDH0B82AskPrsMCC+wwaRuWmQ7A
+         dW7Q==
+X-Gm-Message-State: AO0yUKV6zWifYdhFSTiGmKmj2TXbnnTYUEE1TGThEaJiaeF5/JkHuedF
+	T45PfdyGT0oPCnDf9N6yWyq74UvClewIwueuIwLHl3AebTEu4Y7hAblUb3fQ6O/d7LhiX5haOes
+	I0dvjHj0E307+yRSXnVqFRcBvsKjQ7w6n8Uht
+X-Google-Smtp-Source: AK7set+KXEAb8o8abE6wNoutiAQ55GY0fIjuJKmPv86kzjDel3t35cidlqA1AbkohBsZmOTnoXvdZ//cVUteqmVjoDU=
+X-Received: by 2002:a81:ac27:0:b0:52e:b488:744b with SMTP id
+ k39-20020a81ac27000000b0052eb488744bmr3646866ywh.8.1677960333472; Sat, 04 Mar
+ 2023 12:05:33 -0800 (PST)
+From: Tyson Jones <tyjones@barkleyus.com>
+Date: Sat, 4 Mar 2023 14:05:22 -0600
+Message-ID: <CAEhh6iqUhiPi9NDypC1Nn=w5-Hoqwx7g5U9wvRGqLQ95TKzkfA@mail.gmail.com>
+Subject: Nasir Watts - Letter of Recommendation
+To: nasirwatts@outlook.com
+Content-Type: multipart/alternative; boundary="0000000000009fcf9e05f6189579"
+X-IncomingHeaderCount: 13
+Return-Path: tyjones@barkleyus.com
+X-MS-Exchange-Organization-ExpirationStartTime: 04 Mar 2023 20:05:34.1649
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 82cb4111-3f5e-4645-2574-08db1cebd05c
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DM6NAM04FT053:EE_|MN2PR06MB6703:EE_
+X-MS-Exchange-Organization-AuthSource:
+ DM6NAM04FT053.eop-NAM04.prod.protection.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-UserLastLogonTime: 3/4/2023 7:17:20 PM
+X-MS-Office365-Filtering-Correlation-Id: 82cb4111-3f5e-4645-2574-08db1cebd05c
+X-MS-Exchange-EOPDirect: true
+X-Sender-IP: 209.85.128.173
+X-SID-PRA: TYJONES@BARKLEYUS.COM
+X-SID-Result: PASS
+X-MS-Exchange-Organization-PCL: 2
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Mar 2023 20:05:34.0555
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 82cb4111-3f5e-4645-2574-08db1cebd05c
+X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-AuthSource:
+ DM6NAM04FT053.eop-NAM04.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg:
+ 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR06MB6703
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:01.7225474
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.6156.025
+X-Microsoft-Antispam-Mailbox-Delivery:
+	abwl:0;wl:0;pcwl:0;kl:0;dwl:0;dkl:0;rwl:0;ucf:0;jmr:0;ex:0;auth:1;dest:I;ENG:(5062000305)(90000117)(90005022)(91005020)(91035115)(9050020)(9100338)(2008001134)(2008121020)(4810007)(4910033)(8820095)(9575002)(10195002)(9320005);
+X-Message-Info:
+	qZelhIiYnPnaS4woJl/bUjFx/h6rai9U0Ow/bI9M0RdelOr0hfujrxt+59mYn8w7n+Tsul1Kn/P5tmRV8pnJc4KR9ZsmhQzw3YIxQHJn/lFn7wZ+cGrUwVL09FZLPxA5cMl3WdOEOHCEdhFQY8jUbjkDlHDO3z2iCZPlwfV9kDrDJKhdd9Iio7xh4ooyKqUWoD65Lam7E69vWrFhPXrHFw==
+X-Message-Delivery: Vj0xLjE7dXM9MDtsPTA7YT0xO0Q9MTtHRD0xO1NDTD0z
+X-Microsoft-Antispam-Message-Info:
+	=?Windows-1252?Q?x0felPhKuWzVKy+oMXPGEIxsoBEq0PB5xqmeZzGQRRJQlwHnwUtkcIAs?=
+ =?Windows-1252?Q?1U6PpEp3qfKPtA53GuTRRf2qSemHkPrUL9n/BUbjnphpvwE/LNz4WQfc?=
+ =?Windows-1252?Q?jaeJoHafKaoWLGYy1Pua0tza5bu+FbVVLZprW9JZckbgty3zTa31Gu7r?=
+ =?Windows-1252?Q?gOdR6/kkD5uJ+8NWfhKKFK9EECQQMzhSTd1+S76SzDGrZDL3g+WK1KMS?=
+ =?Windows-1252?Q?PZsqYzLGzf+v9VqQPqyFPrgkJMx2v5YnDQ5c+UK87yKW+/jsNgZFz+3G?=
+ =?Windows-1252?Q?bbtSV3ysSP4Hay8UwEZE/+8wlXJJdoQ3W3xZD615T7hlOuXzZNJeaMNG?=
+ =?Windows-1252?Q?Bt/yy95ALb1BxqNKns2n3SVxcas6hA3sus5NOw/hViRqWkUHaxzyHlIU?=
+ =?Windows-1252?Q?bhycKH+Rdth57QX/Ow8wXmzf+7k/viBsPVs9sLP9nXfKdPQSkhwFqZPV?=
+ =?Windows-1252?Q?qICzW7YDXM3qhdxqbVo3muy53IDr1+1tOOialg/dC0ou2hRp0s/jW8Ft?=
+ =?Windows-1252?Q?cNU6ByUZkcBlQN7wtfaztJ5xW/hO/4YwnZd2zJw59HUbKO/SRDq6rUKT?=
+ =?Windows-1252?Q?AVpdxLBTn0zkDDqhB7Ew2DjztgfPYJZG9ztpfhv9q6iyLA9GOZtFxr1r?=
+ =?Windows-1252?Q?LH5iNAgTVuB+P+RYdgdg3OIU3Q1SyO9VQhe0Rc6K3sGjTmxAe0rbkyxd?=
+ =?Windows-1252?Q?Yq8LtJJVOToVJXFanNbLNkgciqMsjrroMOzB342J1Z49+qpsY9kuoIQa?=
+ =?Windows-1252?Q?BykU6c+hEiD+eEkzlMtBpctc3B6aJyY6qOi8e5slDtPOX7PJAgWv8XwR?=
+ =?Windows-1252?Q?JGc0LLolHKuXslZWyXzcfWnET6SZ3OgLsmybhGLPMLkEgHtqGJjibb6O?=
+ =?Windows-1252?Q?5xYknTzchE9H2zows/+KYwPVdPwHsBMGgW/qezGhfsrclr/bxvHyb4tf?=
+ =?Windows-1252?Q?YqP9hWriUXeYNWDJOrinROOEz+usd9ks9QeCRTTVu8TnSa0MN95zDB0a?=
+ =?Windows-1252?Q?d8aDaLppymYRblmQbNyaNtOX8sqKOZU4/Q4GchfrzGqkzRpfz2EMEQwb?=
+ =?Windows-1252?Q?Xs136entngzm55f+zLKdI3yccTpaUApxy2fDSkt7424lesLIxjBV0nhQ?=
+ =?Windows-1252?Q?pLF1q3xiqo/6zX+MWuXCf14mXeLX3s3O5ID7dEg7HrS5Y6qYleoURZUx?=
+ =?Windows-1252?Q?7fMzprGhh7pJgYqv7pV8oCZhYaqRbBx5lU4j2/RAhGMOCso1r1z81WO6?=
+ =?Windows-1252?Q?v7Ha+5Y9z/Sum50zyo/pqBJjpgb1uBjfbwuyfqcf/kziWZc3kgJu38lx?=
+ =?Windows-1252?Q?PnP1MjIGpjVoZkwJPHDomD8ClNYZIDBDyZa7AsEBq7mm0PHHfRorfwTG?=
+ =?Windows-1252?Q?xn5ZMDOatWbu79dbhQxmAzK1/ZIXz8YisBDeag5nwmEq1GyPTDd4kP/z?=
+ =?Windows-1252?Q?qzIWwlF5mOk2f6klDczZZMGuu1b9ejnMQ/sZCsmE91JVnWuzxsm0bEmR?=
+ =?Windows-1252?Q?I4nFYwo0?=
+MIME-Version: 1.0
+
+--0000000000009fcf9e05f6189579
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+I am pleased to recommend Nasir Watts for this available position in your
+organization.
+
+As the lead email developer on one of our largest leading restaurant brand
+clients that Barkley Advertising provides CRM services for =E2=80=93 Nasir
+developed complex and innovative email campaign work within Salesforce
+Marketing Cloud.
+
+Nasir consistently demonstrated a deeper understanding of the technical
+aspects of email development and has an outstanding ability to develop and
+code dynamic modules for multiples of subscriber segments. He has a keen
+eye for detail and always ensured that the emails that he was responsible
+for, were optimized for maximum engagement and deliverability.
+
+What sets Nasir apart is his ability to partner and collaborate effectively
+with cross-functional teams, including designers, project managers, brand
+leaders and his fellow developers. He's proven to have excellent
+communication skills, both verbal and written, and always kept the team
+informed of progress, roadblocks and new approaches and ideas.
+
+During his tenure at Barkley, Nasir was responsible for developing and
+managing complex email campaign development. His client campaigns
+consistently achieved outstanding engagement rates, which contributed to
+the success of the brand's overall marketing strategy.
+
+I have no doubt that Nasir would be an excellent addition to your
+organization. He is a highly skilled and experienced email developer and
+developer professional overall.  His ability to provide and develop
+innovative and effective solutions and products would prove to be a
+valuable addition.
+
+Please do not hesitate to contact me if you require any further information
+or have any questions.
+
+Sincerely,
+
+[image: The Barkley rocket in white on a red circle]
+
+Tyson S. Jones
+
+Barkley | Assoc. Dir., eCRM Execution
+
+1740 Main Street, Kansas City, MO 64108
+
+Mobile: 816.766.2292 <8167662292>
+Office Phone : 816.842.1500 <8168421500>
+
+barkleyus.com <https://www.barkleyus.com/>
+[image: B corp picture]
+
+--=20
+
+
+NOTE: The information contained
+in this e-mail message, including
+any=20
+attachments, may be privileged
+or confidential. Use or dissemination
+of=20
+this message is prohibited by
+anyone other than the intended
+recipient.=20
+Although our computer
+system is supposed to scan incoming
+e-mail and any=20
+attachments for viruses
+or other defects that might harm
+computer systems,=20
+BARKLEY disclaims
+any responsibility for any resulting loss
+or damage.
+
+
+
+--0000000000009fcf9e05f6189579
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">I am pleased to recommend Nasir Watts for this available pos=
+ition in your organization.<br><br>As the lead email developer on one of ou=
+r largest leading restaurant brand clients&nbsp;that Barkley Advertising pr=
+ovides CRM services for =E2=80=93 Nasir developed complex and innovative em=
+ail campaign work within Salesforce Marketing Cloud.<br><br>Nasir consisten=
+tly demonstrated a deeper understanding of the technical aspects of email d=
+evelopment and has an outstanding ability to develop and code dynamic modul=
+es for multiples of subscriber segments. He has a keen eye for detail and a=
+lways ensured that the emails that he was responsible for, were optimized f=
+or maximum engagement and deliverability.<br><br>What sets Nasir apart is h=
+is ability to partner and collaborate effectively with cross-functional tea=
+ms, including designers, project managers, brand leaders and his fellow dev=
+elopers. He's proven to have excellent communication skills, both verbal an=
+d written, and always kept the team informed of progress, roadblocks and ne=
+w approaches and ideas.<br><br>During his tenure at Barkley, Nasir was resp=
+onsible for developing and managing complex email campaign development. His=
+ client campaigns consistently achieved outstanding engagement rates, which=
+ contributed to the success of the brand's overall marketing strategy.<br><=
+br>I have no doubt that Nasir would be an excellent addition to your organi=
+zation. He is a highly skilled and experienced email developer and develope=
+r professional overall.&nbsp; His ability to provide and develop innovative=
+ and effective solutions and products would prove to be a valuable addition=
+.<br><br>Please do not hesitate to contact me if you require any further in=
+formation or have any questions.<br><br>Sincerely,<br><br><div dir=3D"ltr" =
+class=3D"gmail_signature" data-smartmail=3D"gmail_signature"><div dir=3D"lt=
+r"><div dir=3D"ltr"><img src=3D"http://i.imgur.com/vVoyraz.png" alt=3D"The =
+Barkley rocket in white on a red circle" width=3D"36" style=3D"width:36px;m=
+argin-bottom:6px"> <p style=3D"color:rgb(0,0,0);margin:0px;font-family:Helv=
+etica,Arial,sans-serif;font-size:9pt;line-height:16px;font-weight:bold">
+            Tyson S. Jones
+          </p>  <p style=3D"color:rgb(0,0,0);margin:0px 0px 18px;font-famil=
+y:Helvetica,Arial,sans-serif;font-size:12px;line-height:13px"><span style=
+=3D"text-transform:uppercase;font-weight:bold">Barkley</span> |
+           =20
+              Assoc. Dir., eCRM Execution
+            </p> <p style=3D"color:rgb(0,0,0);margin:0px;font-family:Helvet=
+ica,Arial,sans-serif;font-size:10px;line-height:14px">
+            1740 Main Street, Kansas City, MO 64108<br></p> <p style=3D"col=
+or:rgb(0,0,0);margin:0px;font-family:Helvetica,Arial,sans-serif;font-size:1=
+0px;line-height:14px"><span style=3D"text-transform:lowercase">Mobile:</spa=
+n> <a href=3D"tel:8167662292" style=3D"color:rgb(0,0,0)" target=3D"_blank">=
+816.766.2292</a> <br> <span style=3D"text-transform:lowercase">Office Phone=
+</span>&nbsp;:
+              <a href=3D"tel:8168421500" style=3D"color:rgb(0,0,0)" target=
+=3D"_blank">816.842.1500</a> <br></p> <p style=3D"color:rgb(0,0,0);margin:0=
+px;font-family:Helvetica,Arial,sans-serif;font-size:10px;line-height:14px">=
+<a href=3D"https://na01.safelinks.protection.outlook.com/?url=3Dhttps%3A%2F=
+%2Fwww.barkleyus.com%2F&amp;data=3D05%7C01%7C%7C82cb41113f5e4645257408db1ce=
+bd05c%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638135571358874029%7CUnk=
+nown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJX=
+VCI6Mn0%3D%7C3000%7C%7C%7C&amp;sdata=3D%2BHX1v39k3Ff5n9Id%2FbD7aE4JbS8JMuY3=
+QvFpTMI37Rs%3D&amp;reserved=3D0" originalsrc=3D"https://www.barkleyus.com/"=
+ shash=3D"w4cUTJpuDlgF1pFHn3Nf7/lhiicfrLPi4jWhN8mdUIdrd6PtYcViuDWv4snd/EJNd=
+0St1didBnbg85OPXZHWaeTNh9WK7WU1Tj6MToY6dHsf7Q4YloRO1o1NH7idVsirB2M6Z/NEotOE=
+XMebTsOp2fL20deGd1OKQGKr2lPViko=3D" style=3D"color:rgb(0,0,0)" target=3D"_b=
+lank">barkleyus.com</a><br></p> <img src=3D"https://i.imgur.com/YkPbNyB.png=
+" alt=3D"B corp picture" style=3D"width:36px;margin-left:0px;margin-top:14p=
+x"></div></div></div></div>
+
+<br>
+<div><br></div><div>NOTE: The information contained</div><div>in this e-mai=
+l message, including</div><div>any attachments, may be privileged</div><div=
+>or confidential. Use or dissemination</div><div>of this message is prohibi=
+ted by</div><div>anyone other than the intended</div><div>recipient. Althou=
+gh our computer</div><div>system is supposed to scan incoming</div><div>e-m=
+ail and any attachments for viruses</div><div>or other defects that might h=
+arm</div><div>computer systems, BARKLEY disclaims</div><div>any responsibil=
+ity for any resulting loss</div><div>or damage.</div><div><br></div>=
+
+--0000000000009fcf9e05f6189579--
