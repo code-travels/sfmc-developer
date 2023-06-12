@@ -11,8 +11,6 @@
   <!--    Document Title-->
   <!-- ===============================================-->
   <title>Nasir Watts - Contact</title>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-9OAgBScRmBtXWhrXQmY6Thz-9mXNov4&amp;callback=initMap"
-    async></script>
   <meta name="description"
     content="Nasir Watts is a seasoned Salesforce and Software Developer with extensive experience. Discover projects, skills, and professional journey on the site.">
   <meta name="keywords"
@@ -102,9 +100,6 @@
                 <div class="dropdown-menu shadow-sm border-top-3x border-primary m-0 dropdown-menu-right"><a class="dropdown-item"
                     href="about.html">About</a><a class="dropdown-item" href="gallery.html">Gallery</a></div>
               </li>
-              <!-- <li class="nav-item"><a class="nav-link py-lg-4" href="index/#team" data-fancyscroll="data-fancyscroll">Team</a></li> -->
-              <!-- <li class="nav-item"><a class="nav-link py-lg-4" href="index/#testimonial" data-fancyscroll="data-fancyscroll">Testimonial</a></li> -->
-              <!-- <li class="nav-item dropdown megamenu dropdown-menu-on-hover"><a class="nav-link dropdown-toggle py-lg-4" id="megamneu" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Components</a> -->
               <div class="dropdown-menu p-0 m-0" aria-labelledby="megamneu">
                 <div class="row justify-content-center">
                   <div class="col-xl-9 col-lg-10 px-0 border-top-3x border-primary m-0 bg-white rounded-soft shadow">
@@ -141,7 +136,8 @@
                 <div class="media text-left">
                   <a href="#contactme" class="btn btn-raven-solid-primary mr-4">Contact Me</a>
                   <div class="media-body">
-                    <p class="text-white text-capitalize"> contact by the form field below or connect with me via social media or phone call</p>
+                    <p class="text-white text-capitalize"> contact by the form field below<br>
+                       or connect with me via social media or phone call</p>
                   </div>
                 </div>
               </div>
@@ -210,7 +206,7 @@
                   <div class="row justify-content-center">
                     <div class="col-xl-10 py-3">
                       <h4 class="mb-3 text-primary font-weight-bold">Contact <span class="text-700 font-weight-normal">Me</span></h4>
-                      <form id="contactForm" action="/" target="_blank" method="POST" onsubmit="sendEmail(event); return validateForm(); return validateEmail();">
+                      <form id="contactForm" action="/assets/php/form-processor.php" target="_blank" method="POST" onsubmit="sendEmail(event); return validateForm(); return validateEmail();">
                         <div class="form-group">
                           <label class="font-weight-bold" for="FormControlInput1">Your Name*</label>
                           <input class="form-control" id="FormControlInput1" type="text" name="name" required="required" />

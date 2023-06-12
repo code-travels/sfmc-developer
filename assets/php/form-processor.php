@@ -3,9 +3,9 @@
 	$error = '';
 
 	if ( array_key_exists('to', $_POST) ){
+	$to = $_POST['to'] ? $_POST['to'] : 'nasirwatts@outlook.com';
+	unset($_POST['to']);
 
-		$to 		= $_POST['to'];
-		unset($_POST['to']);
 
 		$from		= "user@domain.com";
 		$name		= "Website User";
