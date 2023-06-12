@@ -89,7 +89,7 @@
                 <a class="nav-link py-lg-4" href="/" role="button">Home</a>
               </li>
               <li class="nav-item dropdown dropdown-menu-on-hover"><a class="nav-link dropdown-toggle py-lg-4" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-                <div class="dropdown-menu shadow-sm border-top-3x border-primary m-0 dropdown-menu-right"><a class="dropdown-item" href="#workexperience">Work Experience</a><a class="dropdown-item" href="contact.html" target="_blank">Contact</a><a class="dropdown-item" href="about.html" target="_blank">About</a><a class="dropdown-item" href="gallery.html" target="_blank">Gallery</a></div>
+                <div class="dropdown-menu shadow-sm border-top-3x border-primary m-0 dropdown-menu-right"><a class="dropdown-item" href="#workexperience">Work Experience</a><a class="dropdown-item" href="contact/" target="_blank">Contact</a><a class="dropdown-item" href="about/" target="_blank">About</a><a class="dropdown-item" href="gallery/" target="_blank">Gallery</a></div>
               </li>
               <!-- <li class="nav-item"><a class="nav-link py-lg-4" href="/#team" data-fancyscroll="data-fancyscroll">Team</a></li> -->
               <!-- <li class="nav-item"><a class="nav-link py-lg-4" href="/#testimonial" data-fancyscroll="data-fancyscroll">Testimonial</a></li> -->
@@ -1709,7 +1709,7 @@
               <div class="col-xl-10 py-3">
                 <h4 class="mb-3 text-primary font-weight-bold">Contact <span
                     class="text-700 font-weight-normal">Me</span></h4>
-                <form class="zform" id="contactForm" action="https://www.thetechconsultant.dev/contact-form-submission.php" method="POST" onsubmit="return validateForm()">
+                <form id="contactForm" action="contact-form-submission.php" method="POST" onsubmit="validateForm(); reset(); return false">
                   <div class="form-group">
                     <label class="font-weight-bold" for="FormControlInput1">Your Name*</label>
                     <input class="form-control" id="FormControlInput1" type="text" name="name" required="required" />
@@ -1725,7 +1725,7 @@
                       required="required"></textarea>
                   </div>
                   <button class="btn btn-raven-solid-success btn-block" type="submit">Send</button>
-                  <div class="zform-feedback"></div>
+                  <div></div>
                 </form>
               </div>
             </div>
