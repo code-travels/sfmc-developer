@@ -638,24 +638,26 @@
       <!-- ===============================================-->
       <!--    End of Main Content-->
       <!-- ===============================================-->
-      <script>
-        function sendEmail() {
-          var name = document.getElementById("FormControlInput1").value;
-          var email = document.getElementById("FormControlInput2").value;
-          var message = document.getElementById("FormControlTextarea1").value;
+<script>
+  function sendEmail(event) {
+    event.preventDefault();
 
-          var subject = "Contact Form Submission";
-          var body = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
+    var name = document.getElementById("FormControlInput1").value;
+    var email = document.getElementById("FormControlInput2").value;
+    var message = document.getElementById("FormControlTextarea1").value;
 
-          var mailtoLink = "mailto:nasirwatts@outlook.com" + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    var subject = "Contact Form Submission";
+    var body = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
 
-          window.location.href = mailtoLink;
-        }
-      </script>
+    var mailtoLink = "mailto:nasirwatts@outlook.com" + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+    window.open(mailtoLink, "_blank");
+  }
+</script>
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
