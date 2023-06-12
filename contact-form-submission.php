@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $txt = "You have received an email from ".$name.".\n\n".$message;
 
   mail($mailTo, $txt, $headers);
-  header("Location: index.php?mailsend");
+  header("Location: contact-form-submission.php?mailsend");
   exit();
 }
 ?>
