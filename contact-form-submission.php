@@ -20,7 +20,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $errors[] = "Invalid email format";
   } else {
     // Validate against known email domains
-    $allowedDomains = ["example.com", "domain.com", "yourdomain.com"]; // Add the known email domains here
+    $allowedDomains = [
+    'gmail.com',
+    'yahoo.com',
+    'hotmail.com',
+    'aol.com',
+    'protonmail.com',
+    'outlook.com',
+    'icloud.com',
+    'zoho.com',
+    'mail.com',
+    'gmx.com',
+    'fastmail.com',
+    'hushmail.com',
+    'inbox.com',
+    'blueyonder.co.uk',
+    'lycos.com',
+    'rediffmail.com',
+    'sina.com',
+    '123.com',
+    'runbox.com',
+    'yandex.com',
+    'libero.it',
+    'wanadoo.fr',
+    'gmx.de',
+    'web.de'
+  ];
 
     $domain = explode("@", $email)[1];
     if (!in_array($domain, $allowedDomains)) {
@@ -40,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   }
 
   // Send an email with the form data
-  $to = "your-email@example.com";
+  $to = "nasirwatts@outlook.com";
   $subject = "New contact form submission";
   $emailBody = "Name: $name\n";
   $emailBody .= "Email: $email\n";
