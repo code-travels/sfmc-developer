@@ -638,28 +638,6 @@
       <!-- ===============================================-->
       <!--    End of Main Content-->
       <!-- ===============================================-->
-
-<script>
-  document.getElementById('contactForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    var formData = new FormData(event.target);
-    var object = {};
-    formData.forEach((value, key) => object[key] = value);
-    var json = JSON.stringify(object);
-
-    fetch('contact-form-submission.php', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: json
-    })
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error('Error:', error));
-  });
-</script>
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
