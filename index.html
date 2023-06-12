@@ -1709,24 +1709,23 @@
               <div class="col-xl-10 py-3">
                 <h4 class="mb-3 text-primary font-weight-bold">Contact <span
                     class="text-700 font-weight-normal">Me</span></h4>
-                <form id="contactForm" action="https://thetechconsultant.dev/contact-form-submission.php" method="POST" onsubmit="validateForm(); reset(); return false">
-                  <div class="form-group">
-                    <label class="font-weight-bold" for="FormControlInput1">Your Name*</label>
-                    <input class="form-control" id="FormControlInput1" type="text" name="name" required="required" />
-                  </div>
-                  <div class="form-group">
-                    <label class="font-weight-bold" for="FormControlInput2">Your email*</label>
-                    <input class="form-control" id="FormControlInput2" type="email" name="email" required="required" />
-                    <span id="emailError" style="color: red;"></span>
-                  </div>
-                  <div class="form-group">
-                    <label class="font-weight-bold" for="FormControlTextarea1">Your message*</label>
-                    <textarea class="form-control" id="FormControlTextarea1" rows="7" name="message"
-                      required="required"></textarea>
-                  </div>
-                  <button class="btn btn-raven-solid-success btn-block" type="submit">Send</button>
-                  <div></div>
-                </form>
+              <form id="contactForm">
+                <div class="form-group">
+                  <label class="font-weight-bold" for="FormControlInput1">Your Name*</label>
+                  <input class="form-control" id="FormControlInput1" type="text" name="name" required="required" />
+                </div>
+                <div class="form-group">
+                  <label class="font-weight-bold" for="FormControlInput2">Your email*</label>
+                  <input class="form-control" id="FormControlInput2" type="email" name="email" required="required" />
+                  <span id="emailError" style="color: red;"></span>
+                </div>
+                <div class="form-group">
+                  <label class="font-weight-bold" for="FormControlTextarea1">Your message*</label>
+                  <textarea class="form-control" id="FormControlTextarea1" rows="7" name="message" required="required"></textarea>
+                </div>
+                <button class="btn btn-raven-solid-success btn-block" type="submit" onclick="sendEmail()">Send</button>
+                <div></div>
+              </form>
               </div>
             </div>
           </div>
@@ -1936,6 +1935,20 @@
     <!-- ===============================================-->
     <!--    End of Main Content-->
     <!-- ===============================================-->
+    <script>
+      function sendEmail() {
+        var name = document.getElementById("FormControlInput1").value;
+        var email = document.getElementById("FormControlInput2").value;
+        var message = document.getElementById("FormControlTextarea1").value;
+
+        var subject = "Contact Form Submission";
+        var body = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
+
+        var mailtoLink = "mailto:nasirwatts@outlook.com" + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+        window.location.href = mailtoLink;
+      }
+    </script>
 
     <!-- ===============================================-->
     <!--    JavaScripts-->
