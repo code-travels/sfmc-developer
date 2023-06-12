@@ -1,9 +1,9 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if (isset($_POST['submit'])) {
   // Retrieve the form data
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-  $message = $_POST["message"];
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $message = $_POST['message'];
 
   // Perform form validation
   $errors = [];
