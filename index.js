@@ -68,16 +68,22 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 
 //create a function to validate the form
 function validateForm() {
- if (document.forms["contactForm"]["FormControlInput1"].value == "") {
-   alert("Name must be filled out");
-   return false;
- }
-    if (document.forms["contactForm"]["FormControlInput2"].value == "") {
-    alert("Email must be filled out");
+  var name = document.getElementById('FormControlInput1').value;
+  var email = document.getElementById('FormControlInput2').value;
+  var message = document.getElementById('FormControlTextarea1').value;
+
+  if (name.trim() === '') {
+    alert('Name must be filled out');
     return false;
-    }
-    if (document.forms["contactForm"]["FormControlTextarea1"].value == "") {
-    alert("Message must be filled out");
+  }
+  if (email.trim() === '') {
+    alert('Email must be filled out');
     return false;
-    }
+  }
+  if (message.trim() === '') {
+    alert('Message must be filled out');
+    return false;
+  }
+
+  return true; // Return true to allow form submission
 }
