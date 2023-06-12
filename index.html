@@ -779,7 +779,7 @@
               <h4 class="mb-3 text-primary font-weight-bold">Contact <span class="text-700 font-weight-normal">Me</span>
               </h4>
               <form id="contactForm" action="/" target="_blank" method="POST"
-                onsubmit="sendEmail(event); reset(); return validateForm()">
+                onsubmit="sendEmail(event); return validateForm(); return validateEmail();">
                 <div class="form-group">
                   <label class="font-weight-bold" for="FormControlInput1">Your Name*</label>
                   <input class="form-control" id="FormControlInput1" type="text" name="name" required="required" />
@@ -793,8 +793,7 @@
                   <label class="font-weight-bold" for="FormControlTextarea1">Your message*</label>
                   <textarea class="form-control" id="FormControlTextarea1" rows="7" name="message" required="required"></textarea>
                 </div>
-                <button class="btn btn-raven-solid-success btn-block" type="submit"
-                  onclick="alert('Email form created successfully!')">Send</button>
+                <button class="btn btn-raven-solid-success btn-block" type="submit">Send</button>
                 <div></div>
               </form>
             </div>
@@ -933,11 +932,79 @@
     <!--    End of Main Content-->
     <!-- ===============================================-->
 <script>
-  function sendEmail() {
+  function validateForm() {
+    var name = document.getElementById("FormControlInput1").value;
+    var email = document.getElementById("FormControlInput2").value;
+    var message = document.getElementById("FormControlTextarea1").value;
+
+    if (name.trim() === "") {
+      alert("Name must be filled out");
+      return false;
+    }
+
+    if (email.trim() === "") {
+      alert("Email must be filled out");
+      return false;
+    }
+
+    if (!validateEmail(email)) {
+      document.getElementById("emailError").textContent = "Invalid email domain";
+      return false;
+    }
+
+    if (message.trim() === "") {
+      alert("Message must be filled out");
+      return false;
+    }
+
+    alert("Email form created successfully!");
+    return true;
+  }
+
+  function validateEmail(email) {
+    var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var knownDomains = [
+      'gmail.com',
+      'yahoo.com',
+      'hotmail.com',
+      'aol.com',
+      'protonmail.com',
+      'outlook.com',
+      'icloud.com',
+      'zoho.com',
+      'mail.com',
+      'gmx.com',
+      'fastmail.com',
+      'hushmail.com',
+      'inbox.com',
+      'blueyonder.co.uk',
+      'lycos.com',
+      'rediffmail.com',
+      'sina.com',
+      '123.com',
+      'runbox.com',
+      'yandex.com',
+      'libero.it',
+      'wanadoo.fr',
+      'gmx.de',
+      'web.de'
+    ];
+
+    if (!regex.test(email)) return false;
+
+    var domain = email.substring(email.lastIndexOf("@") + 1);
+
+    return knownDomains.includes(domain);
+  }
+
+  function sendEmail(event) {
+    event.preventDefault();
 
     var name = document.getElementById("FormControlInput1").value;
     var email = document.getElementById("FormControlInput2").value;
     var message = document.getElementById("FormControlTextarea1").value;
+
+    if (!validateForm()) return false; // stop here if the form validation fails
 
     var subject = "Contact Form Submission";
     var body = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
@@ -954,38 +1021,8 @@
     document.body.removeChild(link);
   }
 
-    function validateForm() {
-        var name = document.getElementById("FormControlInput1").value;
-        var email = document.getElementById("FormControlInput2").value;
-        var message = document.getElementById("FormControlTextarea1").value;
+  document.getElementById('contactForm').addEventListener('submit', sendEmail);
 
-        if (name.trim() === "") {
-          alert("Name must be filled out");
-          return false;
-        }
-
-        if (email.trim() === "") {
-          alert("Email must be filled out");
-          return false;
-        }
-
-        if (!validateEmail(email)) {
-          document.getElementById("emailError").textContent = "Invalid email address";
-          return false;
-        }
-
-        if (message.trim() === "") {
-          alert("Message must be filled out");
-          return false;
-        }
-
-        return true;
-      }
-
-      function validateEmail(email) {
-        var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(email);
-      }
 </script>
 
     <!-- ===============================================-->
