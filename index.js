@@ -66,3 +66,18 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   }
 });
 
+//create a function to validate the form
+function validateForm() {
+ if (document.forms["contactForm"]["FormControlInput1"].value == "") {
+   alert("Name must be filled out");
+   return false;
+ }
+    if (document.forms["contactForm"]["FormControlInput2"].value == "") {
+    alert("Email must be filled out");
+    return false;
+    }
+    if (document.forms["contactForm"]["FormControlTextarea1"].value == "") {
+    alert("Message must be filled out");
+    return false;
+    }
+}
