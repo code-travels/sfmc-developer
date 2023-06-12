@@ -650,6 +650,15 @@
     var body = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
 
     var mailtoLink = "mailto:nasirwatts@outlook.com" + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+    var link = document.createElement("a");
+    link.href = mailtoLink;
+    link.target = "_blank";
+    link.style.display = "none";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 </script>
     <!-- ===============================================-->

@@ -1948,7 +1948,14 @@
 
     var mailtoLink = "mailto:nasirwatts@outlook.com" + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
 
-    window.open(mailtoLink, "_blank");
+    var link = document.createElement("a");
+    link.href = mailtoLink;
+    link.target = "_blank";
+    link.style.display = "none";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 </script>
 
