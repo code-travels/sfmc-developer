@@ -99,7 +99,7 @@
 
               <li class="nav-item dropdown dropdown-menu-on-hover"><a class="nav-link dropdown-toggle py-lg-4" href="#"
                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-                <div class="dropdown-menu shadow-sm border-top-3x border-primary m-0 dropdown-menu-right"><a class="dropdown-item" href="index/#workexperience" target="_blank">Work Experience</a><a class="dropdown-item"
+                <div class="dropdown-menu shadow-sm border-top-3x border-primary m-0 dropdown-menu-right"><a class="dropdown-item"
                     href="about.html">About</a><a class="dropdown-item" href="gallery.html">Gallery</a></div>
               </li>
               <!-- <li class="nav-item"><a class="nav-link py-lg-4" href="index/#team" data-fancyscroll="data-fancyscroll">Team</a></li> -->
@@ -660,6 +660,39 @@
     link.click();
     document.body.removeChild(link);
   }
+
+    function validateForm() {
+        var name = document.getElementById("FormControlInput1").value;
+        var email = document.getElementById("FormControlInput2").value;
+        var message = document.getElementById("FormControlTextarea1").value;
+
+        if (name.trim() === "") {
+          alert("Name must be filled out");
+          return false;
+        }
+
+        if (email.trim() === "") {
+          alert("Email must be filled out");
+          return false;
+        }
+
+        if (!validateEmail(email)) {
+          document.getElementById("emailError").textContent = "Invalid email address";
+          return false;
+        }
+
+        if (message.trim() === "") {
+          alert("Message must be filled out");
+          return false;
+        }
+
+        return true;
+      }
+
+      function validateEmail(email) {
+        var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+      }
 </script>
     <!-- ===============================================-->
     <!--    JavaScripts-->
