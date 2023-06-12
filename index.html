@@ -998,30 +998,36 @@
   }
 
   function sendEmail(event) {
-    event.preventDefault();
+      event.preventDefault();
 
-    var name = document.getElementById("FormControlInput1").value;
-    var email = document.getElementById("FormControlInput2").value;
-    var message = document.getElementById("FormControlTextarea1").value;
+      var name = document.getElementById("FormControlInput1").value;
+      var email = document.getElementById("FormControlInput2").value;
+      var message = document.getElementById("FormControlTextarea1").value;
 
-    if (!validateForm()) return false; // stop here if the form validation fails
+      if (!validateForm()) return false; // stop here if the form validation fails
 
-    var subject = "Contact Form Submission";
-    var body = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
+      var subject = "Contact Form Submission";
+      var body = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
 
-    var mailtoLink = "mailto:nasirwatts@outlook.com" + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      var mailtoLink = "mailto:nasirwatts@outlook.com" + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
 
-    var link = document.createElement("a");
-    link.href = mailtoLink;
-    link.target = "_blank";
-    link.style.display = "none";
+      var link = document.createElement("a");
+      link.href = mailtoLink;
+      link.target = "_blank";
+      link.style.display = "none";
 
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
-  document.getElementById('contactForm').addEventListener('submit', sendEmail);
+       // The form should be reset after the email sending action is complete
+          setTimeout(function () {
+            document.getElementById('contactForm').reset();
+          }, 1000);
+        }
+
+        // Attach the 'sendEmail' function to the form's submit event
+        document.getElementById('contactForm').addEventListener('submit', sendEmail);
 
 </script>
 
