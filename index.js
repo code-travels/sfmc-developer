@@ -104,8 +104,8 @@ function validateForm() {
        // The form should be reset after the email sending action is complete
           setTimeout(function () {
             document.getElementById('contactForm').reset();
-          }, 1000);
+          }, 0);
         }
 
         // Attach the 'sendEmail' function to the form's submit event
-        document.getElementById('contactForm').addEventListener('submit', sendEmail);
+        // document.getElementById('contactForm').addEventListener('submit', sendEmail);
