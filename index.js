@@ -42,40 +42,9 @@ function validateForm() {
     return true;
   }
 
-  function validateEmail(email) {
+ function validateEmail(email) {
     var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    var knownDomains = [
-      'gmail.com',
-      'yahoo.com',
-      'hotmail.com',
-      'aol.com',
-      'protonmail.com',
-      'outlook.com',
-      'icloud.com',
-      'zoho.com',
-      'mail.com',
-      'gmx.com',
-      'fastmail.com',
-      'hushmail.com',
-      'inbox.com',
-      'blueyonder.co.uk',
-      'lycos.com',
-      'rediffmail.com',
-      'sina.com',
-      '123.com',
-      'runbox.com',
-      'yandex.com',
-      'libero.it',
-      'wanadoo.fr',
-      'gmx.de',
-      'web.de'
-    ];
-
-    if (!regex.test(email)) return false;
-
-    var domain = email.substring(email.lastIndexOf("@") + 1);
-
-    return knownDomains.includes(domain);
+    return regex.test(email);
   }
 
   function sendEmail(event) {
