@@ -1,4 +1,10 @@
+
 <?php
+
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
 $error = '';
 $to = 'nasirwatts@outlook.com';
 $reCaptchaSecret = "6Lck1FAUAAAAAIjPn9EAhTE1Z7IiWa0GZpL7hrr4";
