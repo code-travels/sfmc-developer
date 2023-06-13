@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Code Snippet - SOQL</title>
+    <meta name="description"
+        content="Nasir Watts is a seasoned Salesforce and Software Developer with extensive experience. Discover projects, skills, and professional journey on the site.">
+    <meta name="keywords"
+        content="Nasir Watts, Salesforce Developer, Software Developer, Tech Consultant, thetechconsultant.dev">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thetechconsultant.dev/">
+    <meta property="og:title" content="Nasir Watts - Salesforce and Software Developer">
+    <meta property="og:description"
+        content="Nasir Watts is a seasoned Salesforce and Software Developer with extensive experience. Discover projects, skills, and professional journey on the site.">
+    <meta property="og:image" content="https://thetechconsultant.dev/assets/img/TheTechConsultant.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thetechconsultant.dev/">
+    <meta property="twitter:title" content="Nasir Watts - Salesforce and Software Developer">
+    <meta property="twitter:description"
+        content="Nasir Watts is a seasoned Salesforce and Software Developer with extensive experience. Discover projects, skills, and professional journey on the site.">
+    <meta property="twitter:image" content="https://thetechconsultant.dev/assets/img/TheTechConsultant.png">
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicons/favicon.jpg">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link
+        href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900%7CNunito+Sans:300,400,700,900&amp;display=swap"
+        rel="stylesheet">
+    <link href="../assets/lib/prismjs/prism-okaidia.css" rel="stylesheet">
+    <link href="../assets/lib/semantic-ui-accordion/accordion.min.css" rel="stylesheet">
+    <link href="../assets/lib/semantic-ui-transition/transition.min.css" rel="stylesheet">
+    <link href="../assets/css/theme.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+
+
+        <!-- ============================================-->
+        <!-- <section> begin ============================-->
+        <section class="bg-white pt-3 pb-0 d-none d-lg-block">
+
+            <div class="container">
+                <div class="row flex-center">
+                    <div class="col-auto"><a class="navbar-brand-top" href="/"><img class="pt-2"
+                                src="../assets/img/TheTechConsultant.png" alt="logo" width="340" /></a></div>
+                </div>
+            </div>
+            <!-- end of .container-->
+
+        </section>
+        <!-- <section> close ============================-->
+        <!-- ============================================-->
+
+
+        <nav class="navbar navbar-raven navbar-expand-lg navbar-light bg-white font-weight-semi-bold text-base py-lg-0">
+            <div class="container"><a class="navbar-brand d-lg-none" href="/"><img
+                        src="../assets/img/TheTechConsultant.png" alt="logo" width="140" /></a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                    data-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false"
+                    aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse justify-content-center position-relative" id="navbarStandard">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link py-lg-4" href="/" role="button">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link py-lg-4" href="contact.html" role="button">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link py-lg-4" href="about.html" role="button">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link py-lg-4" href="gallery.html" role="button">Gallery</a>
+                        </li>
+
+                        <li class="nav-item dropdown dropdown-menu-on-hover"><a class="nav-link dropdown-toggle py-lg-4"
+                                href="#!" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Code Snippets</a>
+                            <div class="dropdown-menu shadow-sm border-top-3x border-primary m-0 dropdown-menu-right"><a
+                                    class="dropdown-item" target="_blank" href="/codeSnippets/markup.html">HTML</a><a
+                                    class="dropdown-item" target="_blank" href="/codeSnippets/style.html">CSS</a>
+                                <a class="dropdown-item" target="_blank"
+                                    href="/codeSnippets/javascript.html">JavaScript</a><a class="dropdown-item"
+                                    target="_blank" href="/codeSnippets/AMPscript.html">AMPscript</a><a
+                                    class="dropdown-item" target="_blank" href="/codeSnippets/sosl.html">SOSL</a>
+                                <a class="dropdown-item" target="_blank" href="/codeSnippets/soql.html">SOQL</a><a
+                                    class="dropdown-item" target="_blank" href="/codeSnippets/apex.html">Apex</a>
+                            </div>
+                        </li>
+
+                        <div class="dropdown-menu p-0 m-0" aria-labelledby="megamneu">
+                            <div class="row justify-content-center">
+                                <div
+                                    class="col-xl-9 col-lg-10 px-0 border-top-3x border-primary m-0 bg-white rounded-soft shadow">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-6 order-1 bg-white rounded-soft rounded-top-0">
+                                            <div class="row no-gutters py-4">
+                                                <div class="col-6 col-sm-auto ml-4">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-lg d-none d-lg-block order-0 rounded-right-0 overflow-hidden rounded-soft rounded-top-0">
+                                            <div class="bg-holder"
+                                                style="background-image:url(assets/img/gallery/mega-menu.jpg);">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- ============================================-->
+        <!-- <section> begin ============================-->
+
+        <div class="container">
+            <div class="row">
+                <div class="col rounded-soft overflow-hidden">
+                    <div class="bg-holder" style="background-image:url(../assets/img/bg-img/component-1.jpg);">
+                    </div>
+                    <!--/.bg-holder-->
+
+                    <div class="row">
+                        <div class="col-md-7 col-lg-6 px-0"><img class="img-fluid w-100"
+                                src="../assets/img/shapes/shape-component.png" alt="shape">
+                            <div class="row text-white">
+                                <div class="col-lg-8 col-md-9 col-8 absolute-centered">
+                                    <h1 class="text-white text-capitalize">SOQL Snippets</h1>
+                                    <p class="mb-0">SOQL (Salesforce Object Query Language) statements allow users to search for data using specific filters, such as specific fields or related objects.</p><a
+                                        class="btn btn-link btn-sm pl-0 mt-2 text-white"
+                                        href="https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm"
+                                        target="_blank">SOQL &ndash; Salesforce Object Query Language<span
+                                            class="fas fa-chevron-right ml-1 fs--2"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 justify-content-center">
+                <div class="col d-none d-lg-block px-0">
+                    <div class="card shadow border-top-3x border-success" data-options='{"offset_top":95}'>
+                        <div class="card-body">
+                            <ul class="nav flex-column accordion font-weight-semi-bold" id="sidebar-nav">
+                                <li class="nav-item"><a class="nav-link text-primary" data-toggle="collapse"
+                                        href="#plugins" role="button" aria-expanded="true" aria-controls="plugins">Code
+                                        Snippets<span class="fa fa-angle-down font-weight-bold collapse-icon"
+                                            data-fa-transform="right-6 down-3"></span></a>
+                                    <div class="nav collapse pl-3 show" id="plugins" data-parent="#sidebar-nav"><a
+                                            class="nav-link w-100 py-0 text-600"
+                                            href="../codeSnippets/markup.html">HTML</a><a
+                                            class="nav-link w-100 py-0 text-600"
+                                            href="../codeSnippets/style.html">CSS</a>
+                                        <a class="nav-link w-100 py-0 text-600"
+                                            href="../codeSnippets/javascript.html">JavaScript</a><a
+                                            class="nav-link w-100 py-0 text-600"
+                                            href="../codeSnippets/AMPscript.html">AMPscript</a><a
+                                            class="nav-link w-100 py-0 text-600"
+                                            href="../codeSnippets/sosl.html">SOSL</a>
+                                        <a class="nav-link w-100 py-0 text-primary"
+                                            href="../codeSnippets/soql.html">SOQL</a><a
+                                            class="nav-link w-100 py-0 text-600"
+                                            href="../codeSnippets/apex.html">Apex</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-10 col-lg-9 px-0 pl-lg-3">
+                    <div class="card mb-3">
+                    <div class="card-header" style="padding-bottom:0px !important;">
+                        <h5 class="mb-0 font-weight-bold">Utilizing Aggregate Functions in SOQL</h5>
+                        <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">This trick is about using the <i>COUNT</i> aggregate function in SOQL to count the number of records that match a certain
+                        criteria.</h6>
+                    </div>
+                    <div class="card-body bg-light">
+                        <pre class="mt-0"><code class="language-javascript">
+SELECT COUNT(Id) FROM Contact WHERE LastName = 'Watts'
+                    </code></pre>
+                    </div>
+
+
+                    <div class="card mb-3">
+                        <div class="card-header" style="padding-bottom:0px !important;">
+                            <h5 class="mb-0 font-weight-bold">Filtering with SOQL's Date Literals</h5>
+                            <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">This trick showcases how to use date literals in SOQL to
+                                retrieve records based on the <i>CreatedDate</i> field from the last 30 days.</h6>
+                        </div>
+                        <div class="card-body bg-light">
+                            <pre class="mt-0"><code class="language-javascript">
+SELECT Id, Name FROM Account WHERE CreatedDate = LAST_N_DAYS:30
+                                            </code></pre>
+                        </div>
+
+                        <div class="card mb-3">
+                            <div class="card-header" style="padding-bottom:0px !important;">
+                                <h5 class="mb-0 font-weight-bold">Querying Child-to-Parent Relationships in SOQL</h5>
+                                <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">This trick is about querying child-to-parent relationships in SOQL, which allows you to traverse from a child object to
+                                its parent object. Here, it retrieves the associated Account's Name for each Contact.</h6>
+                            </div>
+                            <div class="card-body bg-light">
+                                <pre class="mt-0"><code class="language-javascript">
+SELECT Id, Name, Account.Name FROM Contact
+                            </code></pre>
+                            </div>
+
+
+                            <div class="card mb-3">
+                                <div class="card-header" style="padding-bottom:0px !important;">
+                                    <h5 class="mb-0 font-weight-bold">Sorting Results with the ORDER BY Clause in SOQL</h5>
+                                    <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">This trick highlights how to use the <i>ORDER BY</i> clause in SOQL to sort the results of a query. Here, it sorts the Accounts
+                                    by Name in ascending order.
+                                </div>
+                                <div class="card-body bg-light">
+                                    <pre class="mt-0"><code class="language-javascript">
+SELECT Id, Name FROM Account ORDER BY Name ASC
+                                </code></pre>
+                                </div>
+
+
+                    <div class="card mb-3">
+                        <div class="card-header" id="blog">
+                            <h5 class="mb-0 font-weight-bold">Most Asked Questions about SOQL</h5>
+                        </div>
+                        <div class="card-body bg-light">
+                            <div class="ui styled fluid accordion" data-options='{"exclusive":true}'>
+                                <div class="active title"><i class="dropdown icon"></i>Can SOQL perform write operations like INSERT, UPDATE, or DELETE?</div>
+                                <div class="active content">
+                                    <p>No, unlike SQL, SOQL is a query-only language. This means that you can only use it to retrieve data. If you need to
+                                    insert, update, or delete records, you need to use Data Manipulation Language (DML) operations provided by Apex,
+                                    Salesforce's proprietary programming language.</p>
+                                </div>
+                                <div class="title"><i class="dropdown icon"></i>How does SOQL handle relationships between objects?</div>
+                                <div class="content">
+                                    <p>SOQL has a unique way of handling relationships between objects using Relationship Queries. These allow you to retrieve
+                                    records from one object, then query related objects in a single statement using a nested query. For example, to retrieve
+                                    an account's related contact records, you would use a nested SOQL query such as:
+                            <pre class="mt-2"><code class="language-javascript">SELECT Name, (SELECT LastName FROM Contacts) FROM Account</code></pre>
+                                       </p>
+                                </div>
+                                <div class="title"><i class="dropdown icon"></i>Are there any restrictions or limitations with SOQL queries?</div>
+                                <div class="content">
+                                    <p>Yes, Salesforce enforces several governor limits on SOQL queries to ensure resources are shared equitably. As of the year 2023, 
+                                    a single SOQL query can retrieve up to 50,000 records, and a transaction can run up to
+                                    100 SOQL queries. Additionally, a single query can't select more than 35 child-to-parent relationships and can traverse
+                                    no more than five levels of parent-to-child relationships.</p>
+                                    <p>The total number of SOQL queries in a transaction varies
+                                    based on whether the Apex code is synchronous or asynchronous. Always refer to the latest Salesforce documentation for
+                                    the most accurate information.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ============================================-->
+        <!-- <section> begin ============================-->
+
+        <!-- end of .container-->
+
+        </section>
+        <!-- <section> close ============================-->
+        <!-- ============================================-->
+
+
+
+
+        <!-- ============================================-->
+        <!-- <section> begin ============================-->
+        <section class="p-0">
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col text-center border-top border-200 py-4"><a href="/"><img class="img-fluid mb-2"
+                                src="../assets/img/TheTechConsultant.png" alt="" width="220" /></a>
+                        <p class="fs--1 my-0">© All rights Reserved. 2023</p>
+                    </div>
+                </div>
+            </div>
+            <!-- end of .container-->
+
+        </section>
+        <!-- <section> close ============================-->
+        <!-- ============================================-->
+
+        <a class="bottom-to-top rounded-soft" href="#top" data-fancyscroll><span class="fas fa-angle-up"
+                data-fa-transform="down-2"></span></a>
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+
+
+
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.js"></script>
+    <script src="../assets/js/plugins.js"></script>
+    <script src="../assets/lib/is/is.min.js"></script>
+    <script src="../assets/lib/stickyfilljs/stickyfill.min.js"></script>
+    <script src="../assets/lib/sticky-kit/sticky-kit.min.js"></script>
+    <script src="../assets/lib/prismjs/prism.js"></script>
+    <script src="../assets/lib/semantic-ui-accordion/accordion.min.js"></script>
+    <script src="../assets/lib/semantic-ui-transition/transition.min.js"></script>
+    <script src="../assets/lib/zion-semantic-ui-accordion/js/plugin.min.js"></script>
+    <script src="../assets/js/theme.js"></script>
+
+</body>
+
+</html>
