@@ -57,7 +57,7 @@ function validateForm() {
       if (!validateForm()) return false; // stop here if the form validation fails
 
       var subject = "Contact Form Submission";
-      var body = "Preferred Name: " + name + "\Secondary Email: " + email + "\n\n\n" + message;
+      var body = "Preferred Name: " + name + "\nSecondary Email: " + email + "\n\n\n" + message;
 
       var mailtoLink = "mailto:nasirwatts@outlook.com" + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
 
