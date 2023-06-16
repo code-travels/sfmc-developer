@@ -229,8 +229,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('articles/2003/', views.special_case_2003),
-    path('articles/<int:year>/', views.year_archive),
+    path('', views.index, name='index'),
+    path('product/create/', views.create, name='create'),
+    path('product/created/', views.created, name='created'),
+    path('', views.search, name='search'),
 ]
     </code></pre>
 </div>
