@@ -276,6 +276,74 @@ global void finish(Database.BatchableContext BC){}
                             </code></pre>
                                 </div>
 
+                                <div class="card mb-3">
+                                <div class="card-header" style="padding-bottom:0px !important;">
+                                    <h5 class="mb-0 font-weight-bold">Write an Apex trigger that modifies Account fields before inserting records.</h5>
+                                    <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">Please try to separate the trigger, class, and test class into three separate files
+                                        and remember to create a metadata file for each class and trigger.
+                                    </h6>
+                                </div>
+                                <div class="card-body bg-light">
+                                    <pre class="mt-0"><code class="language-javascript">
+//Write an Apex trigger that fires before records are inserted and ensures that the ShippingState field has the same value as the BillingState field.
+
+public class AccountTriggerHandler {
+    public static void createAccounts(List<Account> accounts) {
+        for (Account a : accounts) {
+            if (a.ShippingState == null) {
+                a.ShippingState = a.BillingState;
+            }
+        }
+        // You should remove the insert statement as this class is called in before insert trigger
+        // which means Salesforce will insert these records after trigger finishes execution.
+        // insert accounts;
+    }
+}
+
+//Create an Apex Trigger for the Account object with the following information:
+//Name: AccountTrigger
+//sObject: Account
+//Fires: before insert
+//Trigger must call the AccountTriggerHandler class and the createAccounts method.
+//Use the isBefore and isInsert context variables to verify that the trigger is running before the records are inserted.
+
+trigger AccountTrigger on Account (before insert) {
+    if (Trigger.isBefore && Trigger.isInsert) {
+        AccountTriggerHandler.createAccounts(Trigger.new);
+    }
+}
+
+//Create a test class with the following information:
+//Name: AccountTriggerTest
+//Test class must insert 200 Account records with a BillingState value of CA.
+//After the insert, verify that all 200 Account records have a ShippingState value of CA.
+
+@isTest
+public class AccountTriggerTest {
+    @isTest static void test() {
+        // Arrange
+        List<Account> accounts = new List<Account>();
+        for (Integer i = 0; i < 200; i++) {
+            // When creating Accounts, set the BillingState, but not the ShippingState
+            accounts.add(new Account(Name = 'Test Account ' + i, BillingState = 'CA'));
+        }
+
+        // Act
+        Test.startTest();
+        insert accounts;
+        Test.stopTest();
+
+        // Assert
+        List<Account> insertedAccounts = [SELECT ShippingState FROM Account WHERE Id IN :accounts];
+        for (Account a : insertedAccounts) {
+            // Assert that the ShippingState was set to the BillingState value
+            System.assertEquals('CA', a.ShippingState);
+        }
+    }
+}
+                            </code></pre>
+                                </div>
+
 
                     <div class="card mb-3">
                         <div class="card-header" id="blog">
