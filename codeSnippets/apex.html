@@ -344,6 +344,71 @@ public class AccountTriggerTest {
                             </code></pre>
                                 </div>
 
+<div class="card mb-3">
+    <div class="card-header" style="padding-bottom:0px !important;">
+        <h5 class="mb-0 font-weight-bold">Account Address Trigger</h5>
+    </div>
+    <div class="card-body bg-light">
+        <pre class="mt-0"><code class="language-javascript">
+//Create an Apex Trigger with the following information:
+//Object: Account
+//Events: Before Insert and Before Update
+//Condition: Match Billing Address is true
+//Operation: Set the Shipping Postal Code to the Billing Postal Code
+
+trigger AccountAddressTrigger on Account (before insert, before update) {
+    for (Account a : Trigger.new) {
+        if (a.Match_Billing_Address__c == true) {
+            a.ShippingPostalCode = a.BillingPostalCode;
+        }
+    }
+}
+        </code></pre>
+</div>
+
+
+<div class="card mb-3">
+    <div class="card-header" style="padding-bottom:0px !important;">
+        <h5 class="mb-0 font-weight-bold">Apex bulkified</h5>
+        <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">
+            In the following code example, 
+            the trigger written is bulkified, meaning it can handle multiple records at a time, up to Salesforce's governor limit of 200 records per transaction.
+            This code correctly uses a `list (List<Task> tasks = new List<Task>();)` to accumulate tasks and then performs a single DML operation `(insert tasks;)` outside of the loop. 
+            This is an example of bulkification, because it means your code only executes one DML operation regardless of the number of records processed. 
+            </h6>
+    </div>
+    <div class="card-body bg-light">
+        <pre class="mt-0"><code class="language-javascript">
+//Create an Apex trigger with the following information:
+//Object: Opportunity
+//Name: ClosedOpportunityTrigger
+//Events: After Insert and After Update
+//Conditions: Stage is Closed Won
+//Operation: Create a task with the following information:
+//Subject: Follow Up Test Task
+//WhatId: Opportunity ID (associates the task with the opportunity)
+//Bulkification: The trigger should be bulkified so that it can insert or update up to 200 records at a time.
+
+trigger ClosedOpportunityTrigger on Opportunity (after insert, after update) {
+    List<Task> tasks = new List<Task>();
+    for(Opportunity opp : Trigger.new){
+        // Check if the StageName has changed to 'Closed Won'
+        if(opp.StageName == 'Closed Won' && (Trigger.isInsert || opp.StageName != Trigger.oldMap.get(opp.Id).StageName)){
+            Task t = new Task();
+            t.Subject = 'Follow Up Test Task';
+            t.WhatId = opp.Id;
+            tasks.add(t);
+        }
+    }
+    insert tasks;
+}
+        </code></pre>
+        <p>Instead of only checking if the `StageName` is `Closed Won`, which means it creates tasks for all opportunities that are inserted or updated 
+            with that stage, even if they were already `Closed Won` before the update, you'd only want to create tasks when an opportunity is closed, not every time a `Closed Won` opportunity is updated.
+            Remember, while Salesforce allows you to process up to 200 records at a time, you should always write your code to handle bulk operations using collections like lists, sets, and maps to avoid hitting governor limits.
+        </p>
+</div>
+
 
                     <div class="card mb-3">
                         <div class="card-header" id="blog">

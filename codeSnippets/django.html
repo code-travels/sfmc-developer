@@ -325,27 +325,7 @@ def search(request):
     </code></pre>
 </div>
 
-<div class="card mb-3">
-    <div class="card-header" style="padding-bottom:0px !important;">
-        <h5 class="mb-0 font-weight-bold">Account Address Trigger</h5>
-    </div>
-    <div class="card-body bg-light">
-        <pre class="mt-0"><code class="language-javascript">
-//Create an Apex Trigger with the following information:
-//Object: Account
-//Events: Before Insert and Before Update
-//Condition: Match Billing Address is true
-//Operation: Set the Shipping Postal Code to the Billing Postal Code
 
-trigger AccountAddressTrigger on Account (before insert, before update) {
-    for (Account a : Trigger.new) {
-        if (a.Match_Billing_Address__c == true) {
-            a.ShippingPostalCode = a.BillingPostalCode;
-        }
-    }
-}
-        </code></pre>
-</div>
 
 
                     <div class="card mb-3">
