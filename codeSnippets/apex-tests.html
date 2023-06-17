@@ -9,7 +9,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>Code Snippet - Apex</title>
+    <title>Code Snippet - Apex Tests</title>
     <meta name="description"
         content="Nasir Watts is a seasoned Salesforce and Software Developer with extensive experience. Discover projects, skills, and professional journey on the site.">
     <meta name="keywords"
@@ -163,10 +163,10 @@
         <img class="img-fluid w-100" src="../assets/img/shapes/shape-component.png" alt="shape">
         <div class="row text-white">
             <div class="col-lg-8 col-md-9 col-10 absolute-centered" style="display: -webkit-box; -webkit-line-clamp: 15; -webkit-box-orient: vertical; overflow: hidden;overflow-y:auto;">
-                <h1 class="text-white text-capitalize" style="padding-top:5px !important;">Apex</h1>
-                <p class="mb-0" style="font-size: 12px !important;">Apex is a strongly typed, object-oriented programming language that allows developers to execute flow and transaction
-                control statements on the Lightning platform server in conjunction with calls to the Lightning Platform API. Apex code in Salesforce is case-insensitive.</p>
-                <a class="btn btn-link btn-sm pl-0 mt-2 text-white" href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_dev_guide.htm" target="_blank">Apex Developer Guide<span class="fas fa-chevron-right ml-1 fs--2"></span>
+                <h1 class="text-white text-capitalize" style="padding-top:5px !important;">Apex Tests</h1>
+                <p class="mb-0" style="font-size: 12px !important;">The Apex testing framework enables you to write and execute tests for your Apex classes and triggers on the Lightning Platform. 
+                    They are used to validate the functionality of custom Apex code and ensure that the code meets the requirements and standards set by the organization.</p>
+                <a class="btn btn-link btn-sm pl-0 mt-2 text-white" href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_testing.htm" target="_blank">Testing Apex<span class="fas fa-chevron-right ml-1 fs--2"></span>
                 </a>
             </div>
         </div>
@@ -196,10 +196,9 @@
                                             class="nav-link w-100 py-0 text-600"
                                             href="../codeSnippets/sosl.html">SOSL</a>
                                         <a class="nav-link w-100 py-0 text-600"
-                                            href="../codeSnippets/soql.html">SOQL</a><a
-                                            class="nav-link w-100 py-0 text-primary"
-                                            href="../codeSnippets/apex.html">Apex</a>
-                                            <a class="nav-link w-100 py-0 text-600" href="../codeSnippets/apex-tests.html">Apex Tests</a>
+                                            href="../codeSnippets/soql.html">SOQL</a>
+                                        <a class="nav-link w-100 py-0 text-600" href="../codeSnippets/apex.html">Apex</a>
+                                        <a class="nav-link w-100 py-0 text-primary" href="../codeSnippets/apex-tests.html">Apex Tests</a>
                                             <a class="nav-link w-100 py-0 text-600" href="../codeSnippets/apex.html">Django</a>
                                     </div>
                                 </li>
@@ -210,141 +209,102 @@
                 <div class="col-xl-10 col-lg-9 px-0 pl-lg-3">
                     <div class="card mb-3">
                         <div class="card-header" style="padding-bottom:0px !important;">
-                            <h5 class="mb-0 font-weight-bold">Triggering Automated Processes in Salesforce</h5>
+                            <h5 class="mb-0 font-weight-bold">Verify Date</h5>
                         </div>
                         <div class="card-body bg-light">
                             <pre class="mt-0"><code class="language-javascript">
-trigger AccountTrigger on Account (before insert) {
-    for(Account a : Trigger.new){
-    a.AnnualRevenue = a.NumberOfEmployees * 1000;
-    }
+public class VerifyDate {
+	
+	//method to handle potential checks against two dates
+	public static Date CheckDates(Date date1, Date date2) {
+		//if date2 is within the next 30 days of date1, use date2.  Otherwise use the end of the month
+		if(DateWithin30Days(date1,date2)) {
+			return date2;
+		} else {
+			return SetEndOfMonthDate(date1);
+		}
+	}
+	
+	//method to check if date2 is within the next 30 days of date1
+	private static Boolean DateWithin30Days(Date date1, Date date2) {
+		//check for date2 being in the past
+        	if( date2 < date1) { return false; }
+        
+        	//check that date2 is within (>=) 30 days of date1
+        	Date date30Days = date1.addDays(30); //create a date 30 days away from date1
+		if( date2 >= date30Days ) { return false; }
+		else { return true; }
+	}
+
+	//method to return the end of the month of a given date
+	private static Date SetEndOfMonthDate(Date date1) {
+		Integer totalDays = Date.daysInMonth(date1.year(), date1.month());
+		Date lastDay = Date.newInstance(date1.year(), date1.month(), totalDays);
+		return lastDay;
+	}
+
 }
                     </code></pre>
                         </div>
 
                     <div class="card mb-3">
                         <div class="card-header" style="padding-bottom:0px !important;">
-                            <h5 class="mb-0 font-weight-bold">APEX Class for a Custom Controller</h5>
+                            <h5 class="mb-0 font-weight-bold">Testing Verify Date</h5>
+                            <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">
+                           Here is an example of how you can write the test class named <i>TestVerifyDate</i> for the <i>VerifyDate</i> class. 
+                           In order to cover all paths and achieve 100% code coverage, you need to cover both the cases where <i>date2</i> is within 30 days of <i>date1</i> and when it is not.
+                            </h6>
                         </div>
                         <div class="card-body bg-light">
                             <pre class="mt-0"><code class="language-javascript">
-public class MyController {
-    public String myString {
-        get; set;
-}
-    public MyController() {
-        myString = 'Hello World';
+@isTest
+public class TestVerifyDate {
+    // test when date2 is within 30 days of date1
+    @isTest
+    static void testDateWithin30Days() {
+        Date date1 = Date.today();
+        Date date2 = Date.today().addDays(10); // within 30 days
+
+        Date result = VerifyDate.CheckDates(date1, date2);
+        System.assertEquals(date2, result, 'Date2 is within 30 days of Date1 so it should be returned');
+    }
+
+    // test when date2 is not within 30 days of date1
+    @isTest
+    static void testDateNotWithin30Days() {
+        Date date1 = Date.today();
+        Date date2 = Date.today().addDays(35); // more than 30 days
+
+        Date result = VerifyDate.CheckDates(date1, date2);
+
+        Integer totalDays = Date.daysInMonth(date1.year(), date1.month());
+        Date lastDayOfMonth = Date.newInstance(date1.year(), date1.month(), totalDays);
+
+        System.assertEquals(lastDayOfMonth, result, 'Date2 is not within 30 days of Date1 so end of the month should be returned');
+    }
+    
+    // test when date2 is before date1
+    @isTest
+    static void testDate2BeforeDate1() {
+        Date date1 = Date.today();
+        Date date2 = Date.today().addDays(-5); // before date1
+
+        Date result = VerifyDate.CheckDates(date1, date2);
+
+        Integer totalDays = Date.daysInMonth(date1.year(), date1.month());
+        Date lastDayOfMonth = Date.newInstance(date1.year(), date1.month(), totalDays);
+
+        System.assertEquals(lastDayOfMonth, result, 'Date2 is before Date1 so end of the month should be returned');
     }
 }
+
                     </code></pre>
+    <br>In this test class, we have three methods. The first method tests the condition where <i>date2</i> is within 30 days of date1. 
+    The second method tests the condition where <i>date2</i> is more than 30 days away from date1, and the third method tests the condition where <i>date2</i> is before <i>date1</i>. The <i>System.assertEquals</i> method is used to assert that the actual result matches the expected result.
+    After writing your tests, be sure to run them and check the code coverage in the Developer Console or your Salesforce IDE to make sure you have achieved 100% coverage.
                         </div>
 
-                        <div class="card mb-3">
-                            <div class="card-header" style="padding-bottom:0px !important;">
-                                <h5 class="mb-0 font-weight-bold">Salesforce APEX Test Classes</h5>
-                            </div>
-                            <div class="card-body bg-light">
-                                <pre class="mt-0"><code class="language-javascript">
-@isTest
-private class TestMyController {
-    static testMethod void testMyController() {
-
-MyController controller = new MyController();
-    System.assertEquals('Hello World', controller.myString);
-    }
-}
-                        </code></pre>
-                            </div>
-
-
-                            <div class="card mb-3">
-                                <div class="card-header" style="padding-bottom:0px !important;">
-                                    <h5 class="mb-0 font-weight-bold">Batch APEX for Large Data Volumes</h5>
-                                </div>
-                                <div class="card-body bg-light">
-                                    <pre class="mt-0"><code class="language-javascript">
-global class BatchApexExample implements Database.Batchable<sObject>{
-    global Database.QueryLocator start(Database.BatchableContext BC){
-    r   eturn Database.getQueryLocator('SELECT Name FROM Account');
-}
-    global void execute(Database.BatchableContext BC, List<Account> scope){
-        for(Account a : scope){
-            a.Name = a.Name + ' - Processed';
-        }
-update scope;
-    }
-global void finish(Database.BatchableContext BC){}
-}
-                            </code></pre>
-                                </div>
-
-                                <div class="card mb-3">
-                                <div class="card-header" style="padding-bottom:0px !important;">
-                                    <h5 class="mb-0 font-weight-bold">Write an Apex trigger that modifies Account fields before inserting records.</h5>
-                                    <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">Please try to separate the trigger, class, and test class into three separate files
-                                        and remember to create a metadata file for each class and trigger.
-                                    </h6>
-                                </div>
-                                <div class="card-body bg-light">
-                                    <pre class="mt-0"><code class="language-javascript">
-//Write an Apex trigger that fires before records are inserted and ensures that the ShippingState field has the same value as the BillingState field.
-
-public class AccountTriggerHandler {
-    public static void createAccounts(List<Account> accounts) {
-        for (Account a : accounts) {
-            if (a.ShippingState == null) {
-                a.ShippingState = a.BillingState;
-            }
-        }
-        // You should remove the insert statement as this class is called in before insert trigger
-        // which means Salesforce will insert these records after trigger finishes execution.
-        // insert accounts;
-    }
-}
-
-//Create an Apex Trigger for the Account object with the following information:
-//Name: AccountTrigger
-//sObject: Account
-//Fires: before insert
-//Trigger must call the AccountTriggerHandler class and the createAccounts method.
-//Use the isBefore and isInsert context variables to verify that the trigger is running before the records are inserted.
-
-trigger AccountTrigger on Account (before insert) {
-    if (Trigger.isBefore && Trigger.isInsert) {
-        AccountTriggerHandler.createAccounts(Trigger.new);
-    }
-}
-
-//Create a test class with the following information:
-//Name: AccountTriggerTest
-//Test class must insert 200 Account records with a BillingState value of CA.
-//After the insert, verify that all 200 Account records have a ShippingState value of CA.
-
-@isTest
-public class AccountTriggerTest {
-    @isTest static void test() {
-        // Arrange
-        List<Account> accounts = new List<Account>();
-        for (Integer i = 0; i < 200; i++) {
-            // When creating Accounts, set the BillingState, but not the ShippingState
-            accounts.add(new Account(Name = 'Test Account ' + i, BillingState = 'CA'));
-        }
-
-        // Act
-        Test.startTest();
-        insert accounts;
-        Test.stopTest();
-
-        // Assert
-        List<Account> insertedAccounts = [SELECT ShippingState FROM Account WHERE Id IN :accounts];
-        for (Account a : insertedAccounts) {
-            // Assert that the ShippingState was set to the BillingState value
-            System.assertEquals('CA', a.ShippingState);
-        }
-    }
-}
-                            </code></pre>
-                                </div>
+                           
 
 <div class="card mb-3">
     <div class="card-header" style="padding-bottom:0px !important;">
@@ -404,7 +364,7 @@ trigger ClosedOpportunityTrigger on Opportunity (after insert, after update) {
     }
     insert tasks;
 }
-        </code></pre><br>
+        </code></pre>
         <p>Instead of only checking if the `StageName` is `Closed Won`, which means it creates tasks for all opportunities that are inserted or updated 
             with that stage, even if they were already `Closed Won` before the update, you'd only want to create tasks when an opportunity is closed, not every time a `Closed Won` opportunity is updated.
             Remember, while Salesforce allows you to process up to 200 records at a time, you should always write your code to handle bulk operations using collections like lists, sets, and maps to avoid hitting governor limits.
@@ -414,32 +374,30 @@ trigger ClosedOpportunityTrigger on Opportunity (after insert, after update) {
 
                     <div class="card mb-3">
                         <div class="card-header" id="blog">
-                            <h5 class="mb-0 font-weight-bold">Most Asked Questions about Apex</h5>
+                            <h5 class="mb-0 font-weight-bold">Most Asked Questions about Testing Apex</h5>
                         </div>
                         <div class="card-body bg-light">
                             <div class="ui styled fluid accordion" data-options='{"exclusive":true}'>
-                                <div class="active title"><i class="dropdown icon"></i>How does Apex handle error handling?</div>
+                                <div class="active title"><i class="dropdown icon"></i>Can we test asynchronous Apex using Salesforce Apex Test classes?</div>
                                 <div class="active content">
-                                    <p>Apex provides a built-in exception handling mechanism, similar to other programming languages like Java. You can use
-                                    try-catch-finally blocks to catch exceptions and perform appropriate actions. Apex provides a variety of system-defined
-                                    exceptions, like DmlException, MathException, and others, and you can also define your own custom exceptions by
-                                    extending the base Exception class.</p>
+                                    <p>Yes, you can test asynchronous Apex code like future methods, batch Apex, and scheduled Apex. 
+                                        Salesforce provides a Test method called `Test.startTest()` and `Test.stopTest()` which allows the system to execute asynchronous code synchronously for testing purposes. 
+                                        When you call `Test.stopTest()`, all asynchronous processes kicked off after `Test.startTest()` are collected and executed before the test method finishes.</p>
                                 </div>
-                                <div class="title"><i class="dropdown icon"></i>How does testing work in Apex?</div>
+                                <div class="title"><i class="dropdown icon"></i>How can we handle test data setup for managed packages in Apex?</div>
                                 <div class="content">
-                                    <p>Salesforce requires at least 75% of your Apex code to be covered by unit tests, and all of those tests must complete
-                                    successfully. Test methods and test classes are not counted as part of Apex code limit. This is done to ensure that all
-                                    your Apex code is tested and working as expected before it's deployed to production. Test classes in Apex are annotated
-                                    with <i>@isTest</i>.</p>
+                                    <p>Test data setup for managed packages can be quite challenging, especially since the Apex <i>SeeAllData</i> annotation is set to false by default in order to ensure test isolation. 
+                                        It means tests do not have access to pre-existing data in the organization, such as standard Salesforce objects and custom objects. 
+                                        If you're developing a managed package, it's good practice to include Apex classes that provide setup methods specifically for generating test data. 
+                                        These can be used by any test methods included in the package, which helps in ensuring consistency and reducing redundancy.</p>
                                 </div>
-                                <div class="title"><i class="dropdown icon"></i>What are Batch Apex and Queueable Apex?</div>
+                                <div class="title"><i class="dropdown icon"></i>How does Governor Limits impact testing in Apex?</div>
                                 <div class="content">
-                                    <p>Batch Apex and Queueable Apex are both used for processing large data sets, but they are used in slightly different
-                                    scenarios. Batch Apex is used when you need to break down a large job into smaller batches of records and then process
-                                    those records. It's useful when you're dealing with data sets that exceed normal governor limits. Queueable Apex is used
-                                    when you need to start a new job and you want it to run asynchronously. It can be used for chaining jobs—meaning you
-                                    start another job from a running job. Both Batch and Queueable Apex are part of Salesforce's asynchronous processing
-                                    capabilities.
+                                    <p>Apex tests are subjected to Governor Limits, just like non-test classes. 
+                                        Salesforce enforces a number of runtime limits to ensure that runaway Apex doesn't monopolize shared resources. Tests that exceed governor limits fail. 
+                                        However, the `Test.startTest()` and `Test.stopTest()` methods give you a new set of governor limits during the test execution. 
+                                        Any code that is executed after the `Test.startTest()` method is subject to a fresh set of governor limits. 
+                                        This can be used strategically in tests to ensure that you have enough resources to test bulk or complex operations.
                                     </p>
                                 </div>
                             </div>
