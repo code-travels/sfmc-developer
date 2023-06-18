@@ -281,32 +281,24 @@ private class AccountManagerTest {
 
                     <div class="card mb-3">
                         <div class="card-header" id="blog">
-                            <h5 class="mb-0 font-weight-bold">Most Asked Questions about SOAP Callouts in Apex</h5>
+                            <h5 class="mb-0 font-weight-bold">Most Asked Questions about REST Service in Apex</h5>
                         </div>
                         <div class="card-body bg-light">
                             <div class="ui styled fluid accordion" data-options='{"exclusive":true}'>
-                                <div class="active title"><i class="dropdown icon"></i>Can we make a synchronous and asynchronous SOAP callout in Apex? If yes, how?</div>
+                                <div class="active title"><i class="dropdown icon"></i>Can Apex REST methods be overloaded?</div>
                                 <div class="active content">
-                                    <p>Yes, you can make both synchronous and asynchronous SOAP callouts in Apex. Synchronous callouts are made when the platform waits for the callout to complete before proceeding with the transaction. This is typically done using HTTP or HTTPS protocols. However, there is a limit of 120 seconds for the total time of all callouts in a transaction. 
-                                        If the callout exceeds this limit, the system will throw a runtime exception.</p>
-                                        <p>For asynchronous callouts, you can use the <i>@future</i> annotation. 
-                                        This way, the platform does not wait for the callout to complete before moving onto the next transaction. 
-                                        It's a way to get around the limit. 
-                                        However, remember that methods with the <i>@future</i> annotation can't be used in Visualforce controllers in `getMethodName()`, `setMethodName()`, or the constructor. 
-                                        Also, they cannot be used in trigger context. As of 2023, Salesforce also introduced a more modern way to do asynchronous processing called <i>Queueable Apex</i> which supports chaining of jobs.</p>
+                                    <p>Unlike Apex classes, Apex REST services do not support method overloading. 
+                                        This means you cannot have two methods with the same name, even if they have different parameters. You will need to give your methods unique names.</p>
                                 </div>
-                                <div class="title"><i class="dropdown icon"></i>Can we handle SOAP callout errors in Apex?</div>
+                                <div class="title"><i class="dropdown icon"></i>How does Salesforce handle NULL values in Apex REST service responses?</div>
                                 <div class="content">
-                                    <p>Yes, error handling in SOAP callouts can be done using try/catch blocks in Apex. 
-                                        For example, the WebServiceCallout.invoke method can throw a CalloutException if the callout fails. 
-                                        We can wrap the callout in a try block and catch the CalloutException to handle errors. 
-                                        This is a good practice to avoid unhandled exceptions which can disrupt the flow of execution.</p>
+                                    <p>By default, if a field in an sObject is NULL, it will not be included in the serialized JSON response. This means that the receiving system must be able to handle missing fields. 
+                                        If it's crucial for the NULL fields to be present in the response, you might need to create a wrapper class and manually set the null fields.</p>
                                 </div>
-                                <div class="title"><i class="dropdown icon"></i>Is it possible to make SOAP callouts to services with self-signed SSL certificates in Apex?</div>
+                                <div class="title"><i class="dropdown icon"></i>Can you use governor limit statements (like LIMIT or OFFSET) in SOQL queries within an Apex REST service?</div>
                                 <div class="content">
-                                    <p>As of the last update in 2021, Salesforce does not allow callouts to services with self-signed SSL certificates. 
-                                        The server you're making the callout to must have a CA-signed SSL certificate. Self-signed certificates are typically not considered as secure because they lack the chain of trust which is provided by CA-signed certificates. 
-                                        The services you make callouts to must adhere to certain requirements, including having a valid CA-signed SSL certificate.
+                                    <p>Yes, but you need to be cautious. Apex REST services, like any other Apex code, are subject to governor limits, including limits on the total number of records retrieved by SOQL queries. This means that if your query retrieves too many records, it could cause your service to exceed its governor limits and fail. To protect against this, you can use the LIMIT and OFFSET statements to control the number of records retrieved. 
+                                        However, OFFSET also counts toward the governor limits and it cannot exceed 2000 rows. So for larger data sets, you might need to implement a custom pagination solution.
                                     </p>
                                 </div>
                             </div>
