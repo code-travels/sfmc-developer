@@ -9,18 +9,18 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>SOQL</title>
+    <title>Apex SOAP Callouts</title>
     <meta name="description"
-        content="SOQL (Salesforce Object Query Language) statements allow users to search for data using specific filters, such as specific fields or related objects.">
+        content="Apex Soap callouts are a type of functionality available in the Apex programming language that allow developers to make web service calls to external systems using SOAP (Simple Object Access Protocol) APIs.">
     <meta name="keywords"
-        content="Nasir Watts, SOQL, Salesforce Developer, Software Developer, Tech Consultant, thetechconsultant.dev">
+        content="Nasir Watts, SOAP API, API, API Callouts, Salesforce Developer, Software Developer, Tech Consultant, thetechconsultant.dev">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thetechconsultant.dev/">
     <meta property="og:title" content="Nasir Watts - Salesforce and Software Developer">
     <meta property="og:description"
-        content="SOQL (Salesforce Object Query Language) statements allow users to search for data using specific filters, such as specific fields or related objects.">
+        content="Apex Soap callouts are a type of functionality available in the Apex programming language that allow developers to make web service calls to external systems using SOAP (Simple Object Access Protocol) APIs.">
     <meta property="og:image" content="https://thetechconsultant.dev/assets/img/TheTechConsultant.png">
 
     <!-- Twitter -->
@@ -28,7 +28,7 @@
     <meta property="twitter:url" content="https://thetechconsultant.dev/">
     <meta property="twitter:title" content="Nasir Watts - Salesforce and Software Developer">
     <meta property="twitter:description"
-        content="SOQL (Salesforce Object Query Language) statements allow users to search for data using specific filters, such as specific fields or related objects.">
+        content="Apex Soap callouts are a type of functionality available in the Apex programming language that allow developers to make web service calls to external systems using SOAP (Simple Object Access Protocol) APIs.">
     <meta property="twitter:image" content="https://thetechconsultant.dev/assets/img/TheTechConsultant.png">
 
 
@@ -108,14 +108,17 @@
                                 aria-expanded="false">Code Snippets</a>
                             <div class="dropdown-menu shadow-sm border-top-3x border-primary m-0 dropdown-menu-right">
                                 <a class="dropdown-item" href="/codeSnippets/markup.html">HTML</a>
-                                    <a class="dropdown-item" href="/codeSnippets/style.html">CSS</a>
+                                <a class="dropdown-item" href="/codeSnippets/style.html">CSS</a>
                                 <a class="dropdown-item" href="/codeSnippets/javascript.html">JavaScript</a>
-                                    <a class="dropdown-item" href="/codeSnippets/ampscript.html">AMPscript</a>
-                                 <a class="dropdown-item" href="/codeSnippets/sosl.html">SOSL</a>
+                                <a class="dropdown-item" href="/codeSnippets/ampscript.html">AMPscript</a>
+                                <a class="dropdown-item" href="/codeSnippets/sosl.html">SOSL</a>
                                 <a class="dropdown-item" href="/codeSnippets/soql.html">SOQL</a>
                                 <a class="dropdown-item" href="/codeSnippets/apex.html">Apex</a>
                                 <a class="dropdown-item" href="/codeSnippets/apex-tests.html">Apex Tests</a>
+                                <a class="dropdown-item" href="/codeSnippets/apex-soap.html">Apex SOAP</a>
+                                <a class="dropdown-item" href="/codeSnippets/apex-rest.html">Apex REST</a>
                                 <a class="dropdown-item" href="/codeSnippets/django.html">Django</a>
+                                
                             </div>
                         </li>
 
@@ -158,20 +161,20 @@
                     </div>
                     <!--/.bg-holder-->
 
-                    <div class="row">
-                        <div class="col-md-7 col-lg-6 px-0"><img class="img-fluid w-100"
-                                src="../assets/img/shapes/shape-component.png" alt="shape">
-                            <div class="row text-white">
-                                <div class="col-lg-8 col-md-9 col-10 absolute-centered" style="display: -webkit-box; -webkit-line-clamp: 15; -webkit-box-orient: vertical; overflow: hidden;overflow-y:auto;">
-                                    <h1 class="text-white text-capitalize" style="padding-top:5px !important;">SOQL</h1>
-                                    <p class="mb-0" style="font-size: 12px !important;">SOQL (Salesforce Object Query Language) statements allow users to search for data using specific filters, such as specific fields or related objects.</p><a
-                                        class="btn btn-link btn-sm pl-0 mt-2 text-white"
-                                        href="https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm"
-                                        target="_blank">SOQL &ndash; Salesforce Object Query Language<span class="fas fa-chevron-right ml-1 fs--2"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="row">
+    <div class="col-md-7 col-lg-6 px-0">
+        <img class="img-fluid w-100" src="../assets/img/shapes/shape-component.png" alt="shape">
+        <div class="row text-white">
+            <div class="col-lg-8 col-md-9 col-10 absolute-centered" style="display: -webkit-box; -webkit-line-clamp: 15; -webkit-box-orient: vertical; overflow: hidden;overflow-y:auto;">
+                <h1 class="text-white text-capitalize" style="padding-top:5px !important;">Apex SOAP Callouts</h1>
+                <p class="mb-0" style="font-size: 12px !important;">Apex Soap callouts are a type of functionality available in the Apex programming language that allow developers to make web service calls to external systems using SOAP (Simple Object Access Protocol) APIs.</p>
+                <a class="btn btn-link btn-sm pl-0 mt-2 text-white" href="https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_quickstart_intro.htm" target="_blank">Soap Callouts in Apex<span class="fas fa-chevron-right ml-1 fs--2"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
                 </div>
             </div>
             <div class="row mt-3 justify-content-center">
@@ -194,12 +197,12 @@
                                             href="../codeSnippets/ampscript.html">AMPscript</a><a
                                             class="nav-link w-100 py-0 text-600"
                                             href="../codeSnippets/sosl.html">SOSL</a>
-                                        <a class="nav-link w-100 py-0 text-primary"
-                                            href="../codeSnippets/soql.html">SOQL</a><a
-                                            class="nav-link w-100 py-0 text-600"
-                                            href="../codeSnippets/apex.html">Apex</a>
-                                            <a class="nav-link w-100 py-0 text-600" href="../codeSnippets/apex-tests.html">Apex Tests</a>
-                                         <a class="nav-link w-100 py-0 text-600" href="../codeSnippets/apex.html">Django</a>
+                                        <a class="nav-link w-100 py-0 text-600"
+                                            href="../codeSnippets/soql.html">SOQL</a>
+                                        <a class="nav-link w-100 py-0 text-600" href="../codeSnippets/apex.html">Apex</a>
+                                        <a class="nav-link w-100 py-0 text-600" href="../codeSnippets/apex-tests.html">Apex Tests</a>
+                                        <a class="nav-link w-100 py-0 text-primary" href="../codeSnippets/apex-soap.html">Apex SOAP</a>
+                                            <a class="nav-link w-100 py-0 text-600" href="../codeSnippets/apex.html">Django</a>
                                     </div>
                                 </li>
                             </ul>
@@ -208,85 +211,160 @@
                 </div>
                 <div class="col-xl-10 col-lg-9 px-0 pl-lg-3">
                     <div class="card mb-3">
-                    <div class="card-header" style="padding-bottom:0px !important;">
-                        <h5 class="mb-0 font-weight-bold">Utilizing Aggregate Functions in SOQL</h5>
-                        <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">This trick is about using the <i>COUNT</i> aggregate function in SOQL to count the number of records that match a certain
-                        criteria.</h6>
-                    </div>
-                    <div class="card-body bg-light">
-                        <pre class="mt-0"><code class="language-javascript">
-SELECT COUNT(Id) FROM Contact WHERE LastName = 'Watts'
-                    </code></pre>
-                    </div>
-
-
-                    <div class="card mb-3">
                         <div class="card-header" style="padding-bottom:0px !important;">
-                            <h5 class="mb-0 font-weight-bold">Filtering with SOQL's Date Literals</h5>
-                            <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">This trick showcases how to use date literals in SOQL to
-                                retrieve records based on the <i>CreatedDate</i> field from the last 30 days.</h6>
+                            <h5 class="mb-0 font-weight-bold">Generate an Apex class using WSDL2Apex for a SOAP web service, write unit tests that achieve 100% code coverage for the class using a mock response, and run your Apex tests.</h5>
+                            <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">
+                           Be sure the Remote Sites necessary are set up in the remote settings of your org. 
+                           Select a WSDL document from your network file system. The WSDL document can be at most 1MB. When the document is parsed, each namespace becomes an Apex class. 
+                           The generated classes contain methods corresponding to each of the operations defined in the WSDL document and also contain methods for logging in to and out of the service, and for querying the endpoint for the service's location. 
+                           The generated classes are contained in a single Apex class named after the WSDL document. 
+                           It should annotated with the webservice keyword so that methods in the class can be exposed through the SOAP web service and annotated with the global keyword so that the class is visible to all Apex code, regardless of the namespace the class is contained in. 
+                           The generated Apex class is annotated with the virtual keyword so that the class can be extended.
+                            </h6>
                         </div>
                         <div class="card-body bg-light">
                             <pre class="mt-0"><code class="language-javascript">
-SELECT Id, Name FROM Account WHERE CreatedDate = LAST_N_DAYS:30
-                                            </code></pre>
+//Generated by wsdl2apex
+
+public class ParkService {
+    public class byCountryResponse {
+        public String[] return_x;
+        private String[] return_x_type_info = new String[]{'return','http://parks.services/',null,'0','-1','false'};
+        private String[] apex_schema_type_info = new String[]{'http://parks.services/','false','false'};
+        private String[] field_order_type_info = new String[]{'return_x'};
+    }
+    public class byCountry {
+        public String arg0;
+        private String[] arg0_type_info = new String[]{'arg0','http://parks.services/',null,'0','1','false'};
+        private String[] apex_schema_type_info = new String[]{'http://parks.services/','false','false'};
+        private String[] field_order_type_info = new String[]{'arg0'};
+    }
+    public class ParksImplPort {
+        public String endpoint_x = 'https://th-apex-soap-service.herokuapp.com/service/parks';
+        public Map<String,String> inputHttpHeaders_x;
+        public Map<String,String> outputHttpHeaders_x;
+        public String clientCertName_x;
+        public String clientCert_x;
+        public String clientCertPasswd_x;
+        public Integer timeout_x;
+        private String[] ns_map_type_info = new String[]{'http://parks.services/', 'ParkService'};
+        public String[] byCountry(String arg0) {
+            ParkService.byCountry request_x = new ParkService.byCountry();
+            request_x.arg0 = arg0;
+            ParkService.byCountryResponse response_x;
+            Map<String, ParkService.byCountryResponse> response_map_x = new Map<String, ParkService.byCountryResponse>();
+            response_map_x.put('response_x', response_x);
+            WebServiceCallout.invoke(
+              this,
+              request_x,
+              response_map_x,
+              new String[]{endpoint_x,
+              '',
+              'http://parks.services/',
+              'byCountry',
+              'http://parks.services/',
+              'byCountryResponse',
+              'ParkService.byCountryResponse'}
+            );
+            response_x = response_map_x.get('response_x');
+            return response_x.return_x;
+        }
+    }
+}
+                    </code></pre>
                         </div>
 
-                        <div class="card mb-3">
-                            <div class="card-header" style="padding-bottom:0px !important;">
-                                <h5 class="mb-0 font-weight-bold">Querying Child-to-Parent Relationships in SOQL</h5>
-                                <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">This trick is about querying child-to-parent relationships in SOQL, which allows you to traverse from a child object to
-                                its parent object. Here, it retrieves the associated Account's Name for each Contact.</h6>
-                            </div>
-                            <div class="card-body bg-light">
-                                <pre class="mt-0"><code class="language-javascript">
-SELECT Id, Name, Account.Name FROM Contact
-                            </code></pre>
-                            </div>
+                    <div class="card mb-3">
+                        <div class="card-header" style="padding-bottom:0px !important;">
+                            <h5 class="mb-0 font-weight-bold">Creating a Class, Test Class, &amp; Unit Tests</h5>
+                            <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">
+                         Create a test class named ParkLocatorTest that uses a mock class called ParkServiceMock to mock the callout to the web service.
+                         The class must have a country method that uses the ParkService class and a method must return an array of available park names for a given country passed to the web service.
+                            </h6>
+                        </div>
+                        <div class="card-body bg-light">
+                            <pre class="mt-0"><code class="language-javascript">
+public class ParkLocator {
+    public static String[] country(String country) {
+        ParkService.ParksImplPort service = new ParkService.ParksImplPort();
+        return service.byCountry(country);
+    }
+}
+
+                    </code></pre>
+    <br>Create a test class named ParkLocatorTest and create unit tests to cover all lines of code included in the ParkLocator class, resulting in 100% code coverage.
+     <pre class="mt-0"><code class="language-javascript">
+@isTest
+public class ParkLocatorTest {
+    @isTest static void testCountry() {
+        ParkServiceMock mock = new ParkServiceMock();
+        Test.setMock(WebServiceMock.class, mock);
+        Test.startTest();
+        String[] result = ParkLocator.country('US');
+        Test.stopTest();
+        System.assertEquals(2, result.size);
+        System.assertEquals('Yellowstone', result[0]);
+        System.assertEquals('Yosemite', result[1]);
+    }
+}
 
 
-                            <div class="card mb-3">
-                                <div class="card-header" style="padding-bottom:0px !important;">
-                                    <h5 class="mb-0 font-weight-bold">Sorting Results with the ORDER BY Clause in SOQL</h5>
-                                    <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">This trick highlights how to use the <i>ORDER BY</i> clause in SOQL to sort the results of a query. Here, it sorts the Accounts
-                                    by Name in ascending order.
-                                </div>
-                                <div class="card-body bg-light">
-                                    <pre class="mt-0"><code class="language-javascript">
-SELECT Id, Name FROM Account ORDER BY Name ASC
-                                </code></pre>
-                                </div>
+                    </code></pre>
+                    <br>Remember to wrap the actual callout in `Test.startTest()` and `Test.stopTest()` to make sure it is included in the asynchronous processing and properly measured against governor limits. 
+                    The next step is to create a mock class called ParkServiceMock that implements the WebServiceMock interface.
+                    <pre class="mt-0"><code class="language-javascript">
+@isTest
+global class ParkServiceMock implements WebServiceMock {
+    global void doInvoke(
+        Object stub,
+        Object request,
+        Map<String, Object> response,
+        String endpoint,
+        String soapAction,
+        String requestName,
+        String responseNS,
+        String responseName,
+        String responseType) {
+        
+        ParkService.byCountryResponse res = new ParkService.byCountryResponse();
+        res.return_x = new String[]{'Yellowstone', 'Yosemite'};
+        response.put('response_x', res);
+    }
+}
+</code></pre>
+
+                        </div>
+
 
 
                     <div class="card mb-3">
                         <div class="card-header" id="blog">
-                            <h5 class="mb-0 font-weight-bold">Most Asked Questions about SOQL</h5>
+                            <h5 class="mb-0 font-weight-bold">Most Asked Questions about SOAP Callouts in Apex</h5>
                         </div>
                         <div class="card-body bg-light">
                             <div class="ui styled fluid accordion" data-options='{"exclusive":true}'>
-                                <div class="active title"><i class="dropdown icon"></i>Can SOQL perform write operations like INSERT, UPDATE, or DELETE?</div>
+                                <div class="active title"><i class="dropdown icon"></i>Can we make a synchronous and asynchronous SOAP callout in Apex? If yes, how?</div>
                                 <div class="active content">
-                                    <p>No, unlike SQL, SOQL is a query-only language. This means that you can only use it to retrieve data. If you need to
-                                    insert, update, or delete records, you need to use Data Manipulation Language (DML) operations provided by Apex,
-                                    Salesforce's proprietary programming language.</p>
+                                    <p>Yes, you can make both synchronous and asynchronous SOAP callouts in Apex. Synchronous callouts are made when the platform waits for the callout to complete before proceeding with the transaction. This is typically done using HTTP or HTTPS protocols. However, there is a limit of 120 seconds for the total time of all callouts in a transaction. 
+                                        If the callout exceeds this limit, the system will throw a runtime exception.</p>
+                                        <p>For asynchronous callouts, you can use the <i>@future</i> annotation. 
+                                        This way, the platform does not wait for the callout to complete before moving onto the next transaction. 
+                                        It's a way to get around the limit. 
+                                        However, remember that methods with the <i>@future</i> annotation can't be used in Visualforce controllers in `getMethodName()`, `setMethodName()`, or the constructor. 
+                                        Also, they cannot be used in trigger context. As of 2023, Salesforce also introduced a more modern way to do asynchronous processing called <i>Queueable Apex</i> which supports chaining of jobs.</p>
                                 </div>
-                                <div class="title"><i class="dropdown icon"></i>How does SOQL handle relationships between objects?</div>
+                                <div class="title"><i class="dropdown icon"></i>Can we handle SOAP callout errors in Apex?</div>
                                 <div class="content">
-                                    <p>SOQL has a unique way of handling relationships between objects using Relationship Queries. These allow you to retrieve
-                                    records from one object, then query related objects in a single statement using a nested query. For example, to retrieve
-                                    an account's related contact records, you would use a nested SOQL query such as:
-                            <pre class="mt-2"><code class="language-javascript">SELECT Name, (SELECT LastName FROM Contacts) FROM Account</code></pre>
-                                       </p>
+                                    <p>Yes, error handling in SOAP callouts can be done using try/catch blocks in Apex. 
+                                        For example, the WebServiceCallout.invoke method can throw a CalloutException if the callout fails. 
+                                        We can wrap the callout in a try block and catch the CalloutException to handle errors. 
+                                        This is a good practice to avoid unhandled exceptions which can disrupt the flow of execution.</p>
                                 </div>
-                                <div class="title"><i class="dropdown icon"></i>Are there any restrictions or limitations with SOQL queries?</div>
+                                <div class="title"><i class="dropdown icon"></i>Is it possible to make SOAP callouts to services with self-signed SSL certificates in Apex?</div>
                                 <div class="content">
-                                    <p>Yes, Salesforce enforces several governor limits on SOQL queries to ensure resources are shared equitably. As of the year 2023, 
-                                    a single SOQL query can retrieve up to 50,000 records, and a transaction can run up to
-                                    100 SOQL queries. Additionally, a single query can't select more than 35 child-to-parent relationships and can traverse
-                                    no more than five levels of parent-to-child relationships.</p>
-                                    <p>The total number of SOQL queries in a transaction varies
-                                    based on whether the Apex code is synchronous or asynchronous. Always refer to the latest Salesforce documentation for
-                                    the most accurate information.
+                                    <p>As of the last update in 2021, Salesforce does not allow callouts to services with self-signed SSL certificates. 
+                                        The server you're making the callout to must have a CA-signed SSL certificate. Self-signed certificates are typically not considered as secure because they lack the chain of trust which is provided by CA-signed certificates. 
+                                        The services you make callouts to must adhere to certain requirements, including having a valid CA-signed SSL certificate.
                                     </p>
                                 </div>
                             </div>

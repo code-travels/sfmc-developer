@@ -9,18 +9,18 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>SOQL</title>
+    <title>Apex REST service</title>
     <meta name="description"
-        content="SOQL (Salesforce Object Query Language) statements allow users to search for data using specific filters, such as specific fields or related objects.">
+        content="Apex REST service allows you to expose your Apex classes and methods as REST endpoints that can be easily consumed by external systems.">
     <meta name="keywords"
-        content="Nasir Watts, SOQL, Salesforce Developer, Software Developer, Tech Consultant, thetechconsultant.dev">
+        content="Nasir Watts, APEX REST, API, API service, Salesforce Developer, Software Developer, Tech Consultant, thetechconsultant.dev">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thetechconsultant.dev/">
     <meta property="og:title" content="Nasir Watts - Salesforce and Software Developer">
     <meta property="og:description"
-        content="SOQL (Salesforce Object Query Language) statements allow users to search for data using specific filters, such as specific fields or related objects.">
+        content="Apex REST service allows you to expose your Apex classes and methods as REST endpoints that can be easily consumed by external systems.">
     <meta property="og:image" content="https://thetechconsultant.dev/assets/img/TheTechConsultant.png">
 
     <!-- Twitter -->
@@ -28,7 +28,7 @@
     <meta property="twitter:url" content="https://thetechconsultant.dev/">
     <meta property="twitter:title" content="Nasir Watts - Salesforce and Software Developer">
     <meta property="twitter:description"
-        content="SOQL (Salesforce Object Query Language) statements allow users to search for data using specific filters, such as specific fields or related objects.">
+        content="Apex REST service allows you to expose your Apex classes and methods as REST endpoints that can be easily consumed by external systems.">
     <meta property="twitter:image" content="https://thetechconsultant.dev/assets/img/TheTechConsultant.png">
 
 
@@ -108,14 +108,17 @@
                                 aria-expanded="false">Code Snippets</a>
                             <div class="dropdown-menu shadow-sm border-top-3x border-primary m-0 dropdown-menu-right">
                                 <a class="dropdown-item" href="/codeSnippets/markup.html">HTML</a>
-                                    <a class="dropdown-item" href="/codeSnippets/style.html">CSS</a>
+                                <a class="dropdown-item" href="/codeSnippets/style.html">CSS</a>
                                 <a class="dropdown-item" href="/codeSnippets/javascript.html">JavaScript</a>
-                                    <a class="dropdown-item" href="/codeSnippets/ampscript.html">AMPscript</a>
-                                 <a class="dropdown-item" href="/codeSnippets/sosl.html">SOSL</a>
+                                <a class="dropdown-item" href="/codeSnippets/ampscript.html">AMPscript</a>
+                                <a class="dropdown-item" href="/codeSnippets/sosl.html">SOSL</a>
                                 <a class="dropdown-item" href="/codeSnippets/soql.html">SOQL</a>
                                 <a class="dropdown-item" href="/codeSnippets/apex.html">Apex</a>
                                 <a class="dropdown-item" href="/codeSnippets/apex-tests.html">Apex Tests</a>
+                                <a class="dropdown-item" href="/codeSnippets/apex-soap.html">Apex SOAP</a>
+                                <a class="dropdown-item" href="/codeSnippets/apex-rest.html">Apex REST</a>
                                 <a class="dropdown-item" href="/codeSnippets/django.html">Django</a>
+                                
                             </div>
                         </li>
 
@@ -158,20 +161,20 @@
                     </div>
                     <!--/.bg-holder-->
 
-                    <div class="row">
-                        <div class="col-md-7 col-lg-6 px-0"><img class="img-fluid w-100"
-                                src="../assets/img/shapes/shape-component.png" alt="shape">
-                            <div class="row text-white">
-                                <div class="col-lg-8 col-md-9 col-10 absolute-centered" style="display: -webkit-box; -webkit-line-clamp: 15; -webkit-box-orient: vertical; overflow: hidden;overflow-y:auto;">
-                                    <h1 class="text-white text-capitalize" style="padding-top:5px !important;">SOQL</h1>
-                                    <p class="mb-0" style="font-size: 12px !important;">SOQL (Salesforce Object Query Language) statements allow users to search for data using specific filters, such as specific fields or related objects.</p><a
-                                        class="btn btn-link btn-sm pl-0 mt-2 text-white"
-                                        href="https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm"
-                                        target="_blank">SOQL &ndash; Salesforce Object Query Language<span class="fas fa-chevron-right ml-1 fs--2"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="row">
+    <div class="col-md-7 col-lg-6 px-0">
+        <img class="img-fluid w-100" src="../assets/img/shapes/shape-component.png" alt="shape">
+        <div class="row text-white">
+            <div class="col-lg-8 col-md-9 col-10 absolute-centered" style="display: -webkit-box; -webkit-line-clamp: 15; -webkit-box-orient: vertical; overflow: hidden;overflow-y:auto;">
+                <h1 class="text-white text-capitalize" style="padding-top:5px !important;">Apex REST service</h1>
+                <p class="mb-0" style="font-size: 12px !important;">Apex REST service allows you to expose your Apex classes and methods as REST endpoints that can be easily consumed by external systems.</p>
+                <a class="btn btn-link btn-sm pl-0 mt-2 text-white" href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_rest_intro.htm" target="_blank">REST serivce in Apex<span class="fas fa-chevron-right ml-1 fs--2"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
                 </div>
             </div>
             <div class="row mt-3 justify-content-center">
@@ -194,12 +197,13 @@
                                             href="../codeSnippets/ampscript.html">AMPscript</a><a
                                             class="nav-link w-100 py-0 text-600"
                                             href="../codeSnippets/sosl.html">SOSL</a>
-                                        <a class="nav-link w-100 py-0 text-primary"
-                                            href="../codeSnippets/soql.html">SOQL</a><a
-                                            class="nav-link w-100 py-0 text-600"
-                                            href="../codeSnippets/apex.html">Apex</a>
-                                            <a class="nav-link w-100 py-0 text-600" href="../codeSnippets/apex-tests.html">Apex Tests</a>
-                                         <a class="nav-link w-100 py-0 text-600" href="../codeSnippets/apex.html">Django</a>
+                                        <a class="nav-link w-100 py-0 text-600"
+                                            href="../codeSnippets/soql.html">SOQL</a>
+                                        <a class="nav-link w-100 py-0 text-600" href="../codeSnippets/apex.html">Apex</a>
+                                        <a class="nav-link w-100 py-0 text-600" href="../codeSnippets/apex-tests.html">Apex Tests</a>
+                                        <a class="nav-link w-100 py-0 text-600" href="../codeSnippets/apex-tests.html">Apex SOAP</a>
+                                        <a class="nav-link w-100 py-0 text-primary" href="../codeSnippets/apex-rest.html">Apex REST</a>
+                                            <a class="nav-link w-100 py-0 text-600" href="../codeSnippets/apex.html">Django</a>
                                     </div>
                                 </li>
                             </ul>
@@ -208,85 +212,101 @@
                 </div>
                 <div class="col-xl-10 col-lg-9 px-0 pl-lg-3">
                     <div class="card mb-3">
-                    <div class="card-header" style="padding-bottom:0px !important;">
-                        <h5 class="mb-0 font-weight-bold">Utilizing Aggregate Functions in SOQL</h5>
-                        <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">This trick is about using the <i>COUNT</i> aggregate function in SOQL to count the number of records that match a certain
-                        criteria.</h6>
-                    </div>
-                    <div class="card-body bg-light">
-                        <pre class="mt-0"><code class="language-javascript">
-SELECT COUNT(Id) FROM Contact WHERE LastName = 'Watts'
-                    </code></pre>
-                    </div>
-
-
-                    <div class="card mb-3">
                         <div class="card-header" style="padding-bottom:0px !important;">
-                            <h5 class="mb-0 font-weight-bold">Filtering with SOQL's Date Literals</h5>
-                            <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">This trick showcases how to use date literals in SOQL to
-                                retrieve records based on the <i>CreatedDate</i> field from the last 30 days.</h6>
+                            <h5 class="mb-0 font-weight-bold">Create an Apex REST service that returns an account and its contacts.</h5>
+                            <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">
+                           Create an Apex class named AccountManager. The class must have a method called <i>getAccount</i> and the Method must be annotated with @HttpGet and return an Account object. 
+                           The Method must return the ID and Name for the requested record and all associated contacts with their ID and Name
+                            </h6>
                         </div>
                         <div class="card-body bg-light">
                             <pre class="mt-0"><code class="language-javascript">
-SELECT Id, Name FROM Account WHERE CreatedDate = LAST_N_DAYS:30
-                                            </code></pre>
+@RestResource(urlMapping='/Accounts/*/contacts')
+global class AccountManager {
+    @HttpGet
+    global static Account getAccount() {
+        RestRequest req = RestContext.request;
+        String accId = req.requestURI.substringBetween('Accounts/', '/contacts');
+        Account acc = [SELECT Id, Name, (SELECT Id, Name FROM Contacts) 
+                       FROM Account WHERE Id = :accId];
+        return acc;
+    }
+}
+
+
+                    </code></pre>
+    <br>Create unit tests. The unit tests must be in a separate Apex class called AccountManagerTest. The unit tests must cover all lines of code included in the AccountManager class, resulting in 100% code coverage.
+
+
+     <pre class="mt-0"><code class="language-javascript">
+@isTest
+private class AccountManagerTest {
+    private static testMethod void getAccountTest1() {
+        Id recordId = createTestRecord();
+        // Set up a test request
+        RestRequest request = new RestRequest();
+        request.requestUri = 'https://na1.salesforce.com/services/apexrest/Accounts/'+ recordId +'/contacts' ;
+        request.httpMethod = 'GET';
+        RestContext.request = request;
+        // Call the method to test
+        Account thisAccount = AccountManager.getAccount();
+        // Verify results
+        System.assert(thisAccount != null);
+        System.assertEquals('Test record', thisAccount.Name);
+        System.assertEquals(1, thisAccount.Contacts.size(), 'Expected one contact for the account');
+    }
+
+    // Helper method
+    static Id createTestRecord() {
+        // Create test record
+        Account TestAcc = new Account(
+          Name='Test record');
+        insert TestAcc;
+        Contact TestCon= new Contact(
+        LastName='Test', 
+        AccountId = TestAcc.id);
+        insert TestCon;
+        return TestAcc.Id;
+    } 
+}
+
+
+                    </code></pre>
                         </div>
 
-                        <div class="card mb-3">
-                            <div class="card-header" style="padding-bottom:0px !important;">
-                                <h5 class="mb-0 font-weight-bold">Querying Child-to-Parent Relationships in SOQL</h5>
-                                <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">This trick is about querying child-to-parent relationships in SOQL, which allows you to traverse from a child object to
-                                its parent object. Here, it retrieves the associated Account's Name for each Contact.</h6>
-                            </div>
-                            <div class="card-body bg-light">
-                                <pre class="mt-0"><code class="language-javascript">
-SELECT Id, Name, Account.Name FROM Contact
-                            </code></pre>
-                            </div>
+                    </code></pre>
+                        </div>
 
-
-                            <div class="card mb-3">
-                                <div class="card-header" style="padding-bottom:0px !important;">
-                                    <h5 class="mb-0 font-weight-bold">Sorting Results with the ORDER BY Clause in SOQL</h5>
-                                    <h6 class="mb-0 font-weight-bold" style="padding-top:5px;">This trick highlights how to use the <i>ORDER BY</i> clause in SOQL to sort the results of a query. Here, it sorts the Accounts
-                                    by Name in ascending order.
-                                </div>
-                                <div class="card-body bg-light">
-                                    <pre class="mt-0"><code class="language-javascript">
-SELECT Id, Name FROM Account ORDER BY Name ASC
-                                </code></pre>
-                                </div>
 
 
                     <div class="card mb-3">
                         <div class="card-header" id="blog">
-                            <h5 class="mb-0 font-weight-bold">Most Asked Questions about SOQL</h5>
+                            <h5 class="mb-0 font-weight-bold">Most Asked Questions about SOAP Callouts in Apex</h5>
                         </div>
                         <div class="card-body bg-light">
                             <div class="ui styled fluid accordion" data-options='{"exclusive":true}'>
-                                <div class="active title"><i class="dropdown icon"></i>Can SOQL perform write operations like INSERT, UPDATE, or DELETE?</div>
+                                <div class="active title"><i class="dropdown icon"></i>Can we make a synchronous and asynchronous SOAP callout in Apex? If yes, how?</div>
                                 <div class="active content">
-                                    <p>No, unlike SQL, SOQL is a query-only language. This means that you can only use it to retrieve data. If you need to
-                                    insert, update, or delete records, you need to use Data Manipulation Language (DML) operations provided by Apex,
-                                    Salesforce's proprietary programming language.</p>
+                                    <p>Yes, you can make both synchronous and asynchronous SOAP callouts in Apex. Synchronous callouts are made when the platform waits for the callout to complete before proceeding with the transaction. This is typically done using HTTP or HTTPS protocols. However, there is a limit of 120 seconds for the total time of all callouts in a transaction. 
+                                        If the callout exceeds this limit, the system will throw a runtime exception.</p>
+                                        <p>For asynchronous callouts, you can use the <i>@future</i> annotation. 
+                                        This way, the platform does not wait for the callout to complete before moving onto the next transaction. 
+                                        It's a way to get around the limit. 
+                                        However, remember that methods with the <i>@future</i> annotation can't be used in Visualforce controllers in `getMethodName()`, `setMethodName()`, or the constructor. 
+                                        Also, they cannot be used in trigger context. As of 2023, Salesforce also introduced a more modern way to do asynchronous processing called <i>Queueable Apex</i> which supports chaining of jobs.</p>
                                 </div>
-                                <div class="title"><i class="dropdown icon"></i>How does SOQL handle relationships between objects?</div>
+                                <div class="title"><i class="dropdown icon"></i>Can we handle SOAP callout errors in Apex?</div>
                                 <div class="content">
-                                    <p>SOQL has a unique way of handling relationships between objects using Relationship Queries. These allow you to retrieve
-                                    records from one object, then query related objects in a single statement using a nested query. For example, to retrieve
-                                    an account's related contact records, you would use a nested SOQL query such as:
-                            <pre class="mt-2"><code class="language-javascript">SELECT Name, (SELECT LastName FROM Contacts) FROM Account</code></pre>
-                                       </p>
+                                    <p>Yes, error handling in SOAP callouts can be done using try/catch blocks in Apex. 
+                                        For example, the WebServiceCallout.invoke method can throw a CalloutException if the callout fails. 
+                                        We can wrap the callout in a try block and catch the CalloutException to handle errors. 
+                                        This is a good practice to avoid unhandled exceptions which can disrupt the flow of execution.</p>
                                 </div>
-                                <div class="title"><i class="dropdown icon"></i>Are there any restrictions or limitations with SOQL queries?</div>
+                                <div class="title"><i class="dropdown icon"></i>Is it possible to make SOAP callouts to services with self-signed SSL certificates in Apex?</div>
                                 <div class="content">
-                                    <p>Yes, Salesforce enforces several governor limits on SOQL queries to ensure resources are shared equitably. As of the year 2023, 
-                                    a single SOQL query can retrieve up to 50,000 records, and a transaction can run up to
-                                    100 SOQL queries. Additionally, a single query can't select more than 35 child-to-parent relationships and can traverse
-                                    no more than five levels of parent-to-child relationships.</p>
-                                    <p>The total number of SOQL queries in a transaction varies
-                                    based on whether the Apex code is synchronous or asynchronous. Always refer to the latest Salesforce documentation for
-                                    the most accurate information.
+                                    <p>As of the last update in 2021, Salesforce does not allow callouts to services with self-signed SSL certificates. 
+                                        The server you're making the callout to must have a CA-signed SSL certificate. Self-signed certificates are typically not considered as secure because they lack the chain of trust which is provided by CA-signed certificates. 
+                                        The services you make callouts to must adhere to certain requirements, including having a valid CA-signed SSL certificate.
                                     </p>
                                 </div>
                             </div>
