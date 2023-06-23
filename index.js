@@ -12,6 +12,43 @@ function initMap() {
         var marker = new google.maps.Marker({ position: atlanta, map: map });
       }
 
+      // Validate TextBOX
+      function validateTextBox() {
+        var name = document.getElementById("FormControlTextarea2").value;
+        if (name.trim() === "") {
+      alert("Text area be filled out");
+      return false;
+    }
+    alert("Text area created successfully!");
+    return true;
+  }
+    function sendEmail2(event) {
+      event.preventDefault();
+      var message = document.getElementById("FormControlTextarea2").value;
+
+      if (!validateTextBox()) return false; // stop here if the form validation fails
+
+      var subject = "Contact Form Submission";
+      var body = message;
+
+      var mailtoLink = "mailto:nasirwatts@outlook.com" + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+      var link = document.createElement("a");
+      link.href = mailtoLink;
+      link.target = "_blank";
+      link.style.display = "none";
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+       // The form should be reset after the email sending action is complete
+          setTimeout(function () {
+            document.getElementById('contactForm2').reset();
+          }, 0);
+        }
+
+        
 // This is the JavaScript file for the form validation on the contact page.
 function validateForm() {
     var name = document.getElementById("FormControlInput1").value;
