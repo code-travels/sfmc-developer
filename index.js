@@ -19,7 +19,7 @@ function initMap() {
       alert("Text area be filled out");
       return false;
     }
-    alert("Text area created successfully!");
+    alert("Email body created successfully!");
     return true;
   }
     function sendEmail2(event) {
@@ -48,7 +48,7 @@ function initMap() {
           }, 0);
         }
 
-        
+
 // This is the JavaScript file for the form validation on the contact page.
 function validateForm() {
     var name = document.getElementById("FormControlInput1").value;
