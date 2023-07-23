@@ -1,0 +1,71 @@
+public with sharing class CustomAuthentication
+{
+    private final String Account_Creation_URL = 'https://ap16.salesforce.com/services/data/v39.0/sobjects/Account';
+    private final String JSON_CONTENT_TYPE = 'application/json';
+    private final String POST_METHOD = 'POST';
+
+    @future(callout=true)
+
+    public Id createAccountCallout(){
+        SF_Custom_Integration__mdt ConnectApi = getConnectionMetadata();
+        SF_Auth authBody = getSFAccessToken(ConnectApi);
+        Id accountId = createAccount(authBody);
+        return accountId;
+    }
+
+    private SF_Custom_Integration__mdt getConnectionMetadata(){
+       List<SF_Custom_Integration__mdt> ConnectApi = [SELECT Id, Name, Client_ID__c, Client_Secret__c, Username__c, Password__c, Security_Token__c, Grant_Type__c, Endpoint_URL__c FROM SF_Custom_Integration__mdt WHERE Name = 'Salesforce'];
+        return ConnectApi;
+    }
+
+    private SF_Auth getSFAccessToken(SF_Custom_Integration__mdt ConnectApi){
+        HttpRequest req = new HttpRequest();
+        req.setMethod(POST_METHOD);
+        req.setEndpoint(generateEndpointURL(ConnectApi));
+        Http http = new Http();
+        HTTPResponse res = http.send(req);
+        SF_Auth authBody = SF_Auth.parse(res.getBody());
+        return authBody;
+    }
+    
+    private Id createAccount(SF_Auth authBody){
+        HttpRequest req = new HttpRequest();
+        req.setMethod(POST_METHOD);
+        req.setEndpoint(Account_Creation_URL);
+        req.setHeader('Content-Type', JSON_CONTENT_TYPE);
+        req.setHeader('Authorization', authBody.token_type + authBody.access_token);
+        req.setBody(JSON.serialize(wrapAccount(generateAccount())));
+        Http http = new Http();
+        HTTPResponse res = http.send(req);
+        accountId = Id.valueOf(response.getBody().substringBetween('"id":"', '","'));
+        return account.Id;
+    }
+
+    private Account generateAccount(){
+        Account account = new Account();
+        account.Name = 'Test Account';
+        account.Phone = '1234567890';
+        return account;
+    }
+
+    private AccountWrapper wrapAccount(Account account){
+        AccountWrapper wrapper = new AccountWrapper();
+        wrapper.account = account;
+        return wrapper;
+    }
+}
+
+//creating the SF_Auth class
+
+public class SF_Auth{
+    public String access_token;
+    public String instance_url;
+    public String id;
+    public String token_type;
+    public String issued_at;
+    public String signature;
+
+    public static SF_Auth parse(String json){
+        return (SF_Auth) System.JSON.deserialize(json, SF_Auth.class);
+    }
+}
